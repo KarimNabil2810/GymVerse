@@ -1,0 +1,1336 @@
+/* Container - Dynamic Theme */
+.workoutsContainer {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.darkMode {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.lightMode {
+  background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f2 100%);
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  padding: 100px 0 60px;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.darkMode .heroSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.08), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.lightMode .heroSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.05), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroTextContainer {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chipWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.heroChip {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 6px 16px !important;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.heroTitle {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.02em !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.darkMode .heroTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .heroTitle {
+  color: #1a1a2e !important;
+}
+
+.heroHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b, #e94560);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.2rem !important;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 32px !important;
+  line-height: 1.8 !important;
+  text-align: center !important;
+}
+
+.darkMode .heroSubtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .heroSubtitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.searchContainer {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.darkMode .searchField {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 50px !important;
+}
+
+.lightMode .searchField {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-radius: 50px !important;
+}
+
+.searchField .MuiOutlinedInput-root {
+  border-radius: 50px !important;
+}
+
+.darkMode .searchField .MuiOutlinedInput-root {
+  color: #ffffff !important;
+}
+
+.lightMode .searchField .MuiOutlinedInput-root {
+  color: #1a1a2e !important;
+}
+
+.darkMode .searchField .MuiOutlinedInput-root fieldset {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .searchField .MuiOutlinedInput-root fieldset {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.darkMode .searchField .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+}
+
+.lightMode .searchField .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+}
+
+.searchField .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #e94560 !important;
+}
+
+.darkMode .searchIcon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lightMode .searchIcon {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.scrollDownButton {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+}
+
+.darkMode .scrollDownButton {
+  color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .scrollDownButton {
+  color: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.darkMode .scrollDownButton:hover {
+  background: rgba(233, 69, 96, 0.2) !important;
+  color: white !important;
+}
+
+.lightMode .scrollDownButton:hover {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Categories Section */
+.categoriesSection {
+  padding: 20px 0 40px;
+  transition: all 0.3s ease;
+}
+
+.darkMode .categoriesSection {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lightMode .categoriesSection {
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.categoriesWrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.categoriesTabs {
+  min-height: 60px !important;
+}
+
+.categoriesTabs .MuiTabs-flexContainer {
+  gap: 8px;
+  justify-content: center;
+}
+
+.categoryTab {
+  min-height: 50px !important;
+  padding: 8px 20px !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease !important;
+}
+
+.darkMode .categoryTab {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .categoryTab {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.darkMode .categoryTab:hover {
+  color: #ffffff !important;
+  background: rgba(233, 69, 96, 0.05) !important;
+}
+
+.lightMode .categoryTab:hover {
+  color: #1a1a2e !important;
+  background: rgba(233, 69, 96, 0.05) !important;
+}
+
+.categoryTab.Mui-selected {
+  color: #e94560 !important;
+  background: rgba(233, 69, 96, 0.1) !important;
+}
+
+.tabLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabLabel svg {
+  font-size: 20px;
+}
+
+.tabText {
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+.tabIndicator {
+  display: none !important;
+}
+
+/* Workouts Grid - Scrollable on mobile */
+.workoutsGridSection {
+  padding: 60px 0;
+}
+
+.workoutsWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.workoutsScrollContainer {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  justify-content: flex-start;
+}
+
+/* Hide scrollbar by default */
+.workoutsScrollContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.workoutsScrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.workoutsScrollContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+/* Show scrollbar on hover */
+.workoutsWrapper:hover .workoutsScrollContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.workoutsWrapper:hover .workoutsScrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(233, 69, 96, 0.3);
+}
+
+.workoutsWrapper:hover .workoutsScrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(233, 69, 96, 0.5);
+}
+
+/* Firefox scrollbar hiding */
+.workoutsScrollContainer {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.workoutsWrapper:hover .workoutsScrollContainer {
+  scrollbar-color: rgba(233, 69, 96, 0.3) transparent;
+}
+
+.gridHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 16px;
+  text-align: center;
+}
+
+.gridHeaderLeft {
+  text-align: center;
+  width: 100%;
+}
+
+.darkMode .gridTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .gridTitle {
+  color: #1a1a2e !important;
+}
+
+.gridTitle {
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.darkMode .gridSubtitle {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .gridSubtitle {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.gridSubtitle {
+  margin-top: 4px !important;
+  text-align: center !important;
+}
+
+/* Workout Card */
+.darkMode .workoutCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .workoutCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.workoutCard {
+  flex: 0 0 280px;
+  border-radius: 20px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+.darkMode .workoutCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+.lightMode .workoutCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08) !important;
+}
+
+.workoutCard:hover {
+  transform: translateY(-8px);
+}
+
+.cardImageContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage {
+  transition: transform 0.4s ease;
+}
+
+.workoutCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardBadges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.popularBadge {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+}
+
+.difficultyBadge {
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+}
+
+.cardActions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.actionButton {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px);
+  color: white !important;
+  width: 36px !important;
+  height: 36px !important;
+  transition: all 0.3s ease !important;
+}
+
+.actionButton:hover {
+  background: rgba(233, 69, 96, 0.8) !important;
+  transform: scale(1.1);
+}
+
+.favoriteActive {
+  color: #e94560 !important;
+}
+
+.bookmarkActive {
+  color: #ffd700 !important;
+}
+
+.cardContent {
+  padding: 20px !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.darkMode .workoutTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .workoutTitle {
+  color: #1a1a2e !important;
+}
+
+.workoutTitle {
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.darkMode .workoutDescription {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .workoutDescription {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.workoutDescription {
+  margin-bottom: 16px !important;
+  line-height: 1.6 !important;
+  flex: 1;
+  text-align: center !important;
+}
+
+.workoutStats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.darkMode .statItem {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lightMode .statItem {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.statIcon {
+  font-size: 16px !important;
+}
+
+.equipmentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.darkMode .equipmentChip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .equipmentChip {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.equipmentChip {
+  font-size: 0.7rem !important;
+  height: 24px !important;
+}
+
+.startButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 50px !important;
+  padding: 10px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+}
+
+.startButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* No Results */
+.noResults {
+  text-align: center;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.darkMode .noResultsIcon {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.lightMode .noResultsIcon {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.noResultsIcon {
+  font-size: 80px !important;
+  margin-bottom: 24px;
+}
+
+.darkMode .noResultsTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .noResultsTitle {
+  color: #1a1a2e !important;
+}
+
+.noResultsTitle {
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.darkMode .noResultsSubtitle {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .noResultsSubtitle {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.noResultsSubtitle {
+  margin-bottom: 24px !important;
+  text-align: center !important;
+}
+
+.clearFiltersButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 50px !important;
+  padding: 10px 32px !important;
+  text-transform: none !important;
+}
+
+.clearFiltersButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Featured Section - Centered without image */
+.featuredSection {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.darkMode .featuredSection {
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.05), transparent);
+}
+
+.lightMode .featuredSection {
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.03), transparent);
+}
+
+.featuredSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  animation: rotate 30s linear infinite;
+}
+
+.darkMode .featuredSection::before {
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.05), transparent 70%);
+}
+
+.lightMode .featuredSection::before {
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.03), transparent 70%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.featuredContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.darkMode .featuredChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.lightMode .featuredChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.featuredChip {
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+}
+
+.darkMode .featuredTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .featuredTitle {
+  color: #1a1a2e !important;
+}
+
+.featuredTitle {
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.darkMode .featuredSubtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .featuredSubtitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.featuredSubtitle {
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+  text-align: center !important;
+}
+
+.darkMode .featuredDescription {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .featuredDescription {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.featuredDescription {
+  max-width: 550px;
+  line-height: 1.8 !important;
+  margin: 0 auto 24px !important;
+  text-align: center !important;
+}
+
+.featuredStats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.darkMode .featuredStat {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.lightMode .featuredStat {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.featuredStat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featuredStatIcon {
+  color: #e94560;
+}
+
+.featuredButtonWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.featuredButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 50px !important;
+  padding: 12px 40px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.featuredButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(233, 69, 96, 0.4) !important;
+}
+
+/* Tips Section - Scrollable in one line */
+.tipsSection {
+  padding: 80px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.darkMode .sectionChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.lightMode .sectionChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.sectionChip {
+  font-weight: 600 !important;
+}
+
+.darkMode .sectionTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .sectionTitle {
+  color: #1a1a2e !important;
+}
+
+.sectionTitle {
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 16px !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.sectionHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tipsWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.tipsScrollContainer {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  justify-content: flex-start;
+}
+
+/* Hide scrollbar by default */
+.tipsScrollContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tipsScrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.tipsScrollContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+/* Show scrollbar on hover */
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(233, 69, 96, 0.3);
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(233, 69, 96, 0.5);
+}
+
+/* Firefox scrollbar hiding */
+.tipsScrollContainer {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.tipsWrapper:hover .tipsScrollContainer {
+  scrollbar-color: rgba(233, 69, 96, 0.3) transparent;
+}
+
+.darkMode .tipCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .tipCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.tipCard {
+  flex: 0 0 280px;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+  scroll-snap-align: start;
+}
+
+.tipCard:hover {
+  transform: translateY(-5px);
+}
+
+.darkMode .tipCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.lightMode .tipCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06) !important;
+}
+
+.tipCardContent {
+  padding: 24px !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tipIconContainer {
+  width: 56px;
+  height: 56px;
+  background: rgba(233, 69, 96, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.tipCard:hover .tipIconContainer {
+  transform: scale(1.1) rotate(-5deg);
+  background: rgba(233, 69, 96, 0.2);
+}
+
+.tipIcon {
+  font-size: 28px !important;
+  color: #e94560;
+}
+
+.darkMode .tipTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .tipTitle {
+  color: #1a1a2e !important;
+}
+
+.tipTitle {
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.darkMode .tipDescription {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .tipDescription {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.tipDescription {
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+/* Scroll Top Button */
+.scrollTopButton {
+  position: fixed !important;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 1000;
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.scrollTopButton:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 12px 40px rgba(233, 69, 96, 0.4) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .workoutCard {
+    flex: 0 0 260px;
+  }
+  
+  .tipCard {
+    flex: 0 0 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 80px 0 40px;
+    min-height: auto;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem !important;
+    padding: 0 16px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem !important;
+  }
+  
+  .categoriesSection {
+    padding: 16px 0 24px;
+  }
+  
+  .categoryTab {
+    padding: 6px 14px !important;
+  }
+  
+  .tabText {
+    font-size: 0.8rem !important;
+  }
+  
+  .gridHeader {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .gridHeaderLeft {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .gridTitle {
+    text-align: center !important;
+  }
+  
+  .gridSubtitle {
+    text-align: center !important;
+  }
+  
+  .workoutsScrollContainer {
+    gap: 16px;
+    padding: 10px 16px;
+  }
+  
+  .workoutCard {
+    flex: 0 0 260px;
+  }
+  
+  .featuredSection {
+    padding: 60px 0;
+  }
+  
+  .workoutsGridSection {
+    padding: 40px 0;
+  }
+  
+  .tipsSection {
+    padding: 60px 0;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+  
+  .featuredDescription {
+    padding: 0 16px;
+  }
+  
+  .featuredStats {
+    gap: 16px;
+  }
+  
+  .tipCard {
+    flex: 0 0 240px;
+  }
+  
+  .tipsScrollContainer {
+    gap: 16px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem !important;
+    padding: 0 16px;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem !important;
+  }
+  
+  .searchContainer {
+    padding: 0 16px;
+  }
+  
+  .categoryTab {
+    padding: 4px 12px !important;
+    min-height: 40px !important;
+  }
+  
+  .tabLabel svg {
+    font-size: 16px !important;
+  }
+  
+  .tabText {
+    font-size: 0.7rem !important;
+  }
+  
+  .workoutCard {
+    flex: 0 0 240px;
+  }
+  
+  .cardContent {
+    padding: 16px !important;
+  }
+  
+  .workoutStats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .scrollTopButton {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .featuredButton {
+    width: 100%;
+  }
+  
+  .clearFiltersButton {
+    width: 100%;
+  }
+  
+  .noResults {
+    padding: 40px 16px;
+  }
+  
+  .featuredTitle {
+    font-size: 2rem !important;
+  }
+  
+  .featuredSubtitle {
+    font-size: 1.2rem !important;
+  }
+  
+  .featuredStats {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .featuredContent {
+    padding: 0 16px;
+  }
+  
+  .tipCard {
+    flex: 0 0 220px;
+  }
+  
+  .tipCardContent {
+    padding: 16px !important;
+  }
+  
+  .tipTitle {
+    font-size: 1rem !important;
+  }
+  
+  .tipDescription {
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .heroTitle {
+    font-size: 1.6rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.4rem !important;
+  }
+  
+  .categoryTab {
+    padding: 4px 8px !important;
+  }
+  
+  .tabLabel svg {
+    font-size: 14px !important;
+  }
+  
+  .tabText {
+    font-size: 0.65rem !important;
+  }
+  
+  .workoutCard {
+    flex: 0 0 200px;
+  }
+  
+  .tipCard {
+    flex: 0 0 200px;
+  }
+  
+  .featuredTitle {
+    font-size: 1.6rem !important;
+  }
+  
+  .featuredSubtitle {
+    font-size: 1rem !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
