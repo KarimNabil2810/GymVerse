@@ -186,15 +186,9 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                 <Box className={styles.themeToggle} onClick={toggleTheme}>
                   {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
                 </Box>
-                {/* <Avatar className={styles.avatar}>
-                  <FitnessCenterIcon />
-                </Avatar> */}
               </Box>
             ) : (
               <Box className={styles.mobileActions}>
-                {/* <IconButton onClick={toggleTheme} className={styles.mobileThemeBtn}>
-                  {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
-                </IconButton> */}
                 <IconButton
                   color="inherit"
                   aria-label="open drawer"
