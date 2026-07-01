@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -36,7 +37,7 @@ function App() {
       <Router>
         <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
         <Routes>
-          <Route path="/" element={<div>Home Page</div>} />
+          <Route path="/" element={<Home />} />
           <Route path="/calories" element={<div>Calories Calculator</div>} />
           <Route path="/weight" element={<div>Weight Tracking</div>} />
           <Route path="/diet" element={<div>Diet Plan</div>} />
