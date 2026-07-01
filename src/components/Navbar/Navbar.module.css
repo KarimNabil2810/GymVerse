@@ -1,0 +1,573 @@
+/* Navbar Base */
+.navbar {
+  background: rgba(26, 26, 46, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  padding: 0 !important;
+}
+
+.navbarScrolled {
+  background: rgba(26, 26, 46, 0.95) !important;
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  border-bottom: 1px solid rgba(233, 69, 96, 0.1);
+}
+
+.navbarSpacer {
+  height: 70px;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0 !important;
+  min-height: 70px !important;
+  position: relative;
+}
+
+/* Logo */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.logoContainer:hover {
+  transform: scale(1.02);
+}
+
+.logoBadge {
+  margin-right: 4px;
+}
+
+.logoBadge .MuiBadge-badge {
+  font-size: 8px;
+  height: 16px;
+  min-width: 16px;
+  padding: 0 4px;
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  color: white;
+  font-weight: 700;
+}
+
+.logoIcon {
+  font-size: 36px !important;
+  color: #e94560;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(233, 69, 96, 0.3));
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+}
+
+.logoText {
+  font-weight: 800 !important;
+  font-size: 1.6rem !important;
+  color: #ffffff !important;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logoHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b, #e94560);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.navButton {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 500 !important;
+  padding: 8px 18px !important;
+  border-radius: 50px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-transform: none !important;
+  font-size: 0.9rem !important;
+  position: relative;
+  overflow: hidden;
+  min-width: auto !important;
+}
+
+.navButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(255, 107, 107, 0.05));
+  border-radius: 50px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navButton:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  background: rgba(233, 69, 96, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.15);
+}
+
+.navButton:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navButton .MuiButton-startIcon {
+  margin-right: 6px;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover .MuiButton-startIcon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.activeNavButton {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(255, 107, 107, 0.1)) !important;
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.1);
+}
+
+.activeNavButton::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, #e94560, #ff6b6b);
+  border-radius: 3px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 20px;
+    opacity: 1;
+  }
+}
+
+/* Theme Toggle */
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 4px;
+}
+
+.themeToggle:hover {
+  background: rgba(233, 69, 96, 0.15);
+  color: #ffffff;
+  transform: rotate(30deg);
+}
+
+/* Avatar */
+.avatar {
+  width: 38px !important;
+  height: 38px !important;
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(233, 69, 96, 0.3);
+}
+
+/* Mobile Menu Button */
+.menuButton {
+  color: #ffffff !important;
+  padding: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.menuButton:hover {
+  transform: rotate(90deg);
+  background: rgba(233, 69, 96, 0.1) !important;
+}
+
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobileThemeBtn {
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: all 0.3s ease !important;
+}
+
+.mobileThemeBtn:hover {
+  color: #ffffff !important;
+  transform: rotate(30deg);
+}
+
+/* Drawer */
+.drawerPaper {
+  width: 320px !important;
+  background: rgba(22, 33, 62, 0.98) !important;
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: none !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.drawerContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.drawerLogoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drawerLogoIcon {
+  font-size: 28px !important;
+  color: #e94560;
+  animation: float 3s ease-in-out infinite;
+}
+
+.drawerLogoText {
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  font-size: 1.3rem !important;
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.drawerCloseBtn {
+  color: rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.drawerCloseBtn:hover {
+  color: #ffffff !important;
+  transform: rotate(90deg);
+  background: rgba(233, 69, 96, 0.1) !important;
+}
+
+.drawerDivider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(233, 69, 96, 0.3), transparent);
+  margin: 0 24px;
+}
+
+.drawerList {
+  flex: 1;
+  padding: 16px 16px !important;
+  overflow-y: auto;
+}
+
+.drawerItem {
+  padding: 14px 20px !important;
+  border-radius: 16px !important;
+  margin-bottom: 6px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.drawerItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.drawerItem:hover::before {
+  opacity: 1;
+}
+
+.drawerItem:hover {
+  background: rgba(233, 69, 96, 0.08) !important;
+  transform: translateX(8px);
+}
+
+.drawerItemIcon {
+  color: rgba(255, 255, 255, 0.5) !important;
+  min-width: 40px !important;
+  transition: all 0.3s ease !important;
+}
+
+.drawerItem:hover .drawerItemIcon {
+  color: #e94560 !important;
+  transform: scale(1.1);
+}
+
+.drawerItemText {
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: all 0.3s ease !important;
+}
+
+.drawerItem:hover .drawerItemText {
+  color: #ffffff !important;
+}
+
+.activeDrawerItem {
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.15), rgba(255, 107, 107, 0.05)) !important;
+  border: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+.activeDrawerItem .drawerItemIcon {
+  color: #e94560 !important;
+}
+
+.activeDrawerItem .drawerItemText {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.drawerActiveIndicator {
+  width: 4px;
+  height: 30px;
+  background: linear-gradient(180deg, #e94560, #ff6b6b);
+  border-radius: 4px;
+  animation: slideIn 0.3s ease;
+}
+
+.drawerFooter {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.drawerThemeToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.drawerThemeToggle:hover {
+  background: rgba(233, 69, 96, 0.1);
+  color: #ffffff;
+}
+
+.drawerThemeToggle svg {
+  font-size: 20px;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1100;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navButton {
+    padding: 6px 14px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .logoText {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .navButton {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .navButton .MuiButton-startIcon {
+    margin-right: 4px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbarSpacer {
+    height: 64px;
+  }
+
+  .toolbar {
+    min-height: 64px !important;
+  }
+
+  .logoText {
+    font-size: 1.3rem !important;
+  }
+
+  .logoIcon {
+    font-size: 30px !important;
+  }
+
+  .drawerPaper {
+    width: 280px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbarSpacer {
+    height: 60px;
+  }
+
+  .toolbar {
+    min-height: 60px !important;
+  }
+
+  .logoText {
+    font-size: 1.1rem !important;
+  }
+
+  .logoIcon {
+    font-size: 26px !important;
+  }
+
+  .drawerPaper {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+
+  .drawerHeader {
+    padding: 20px 20px 12px;
+  }
+
+  .drawerList {
+    padding: 12px 12px !important;
+  }
+
+  .drawerItem {
+    padding: 12px 16px !important;
+  }
+}
+
+/* Scrollbar Styling */
+.drawerList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.drawerList::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.drawerList::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e94560, #ff6b6b);
+  border-radius: 4px;
+}
+
+.drawerList::-webkit-scrollbar-thumb:hover {
+  background: #ff6b6b;
+}
+
+/* Hover Animation for Desktop */
+@media (min-width: 769px) {
+  .navButton::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #e94560, #ff6b6b);
+    transition: width 0.3s ease;
+  }
+
+  .navButton:hover::after {
+    width: 60%;
+  }
+
+  .activeNavButton::after {
+    width: 60% !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
