@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Workouts from './components/Workouts/Workouts';
 import Calories from './components/Calories/Calories';
+import Weight from './components/Weight/Weight';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -42,7 +43,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/calories" element={<Calories />} />
           <Route path="/workouts" element={<Workouts />} />
-          {/* <Route path="/weight" element={<Weight />} /> */}
+          <Route path="/weight" element={<Weight />} />
           {/* <Route path="/diet" element={<Diet />} /> */}
         </Routes>
       </Router>

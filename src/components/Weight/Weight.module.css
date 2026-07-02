@@ -1,0 +1,1708 @@
+/* Container - Dynamic Theme */
+.weightContainer {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.darkMode {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.lightMode {
+  background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f2 100%);
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  padding: 100px 0 60px;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.darkMode .heroSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.08), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.lightMode .heroSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.05), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroTextContainer {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chipWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.heroChip {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 6px 16px !important;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.heroTitle {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.02em !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.darkMode .heroTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .heroTitle {
+  color: #1a1a2e !important;
+}
+
+.heroHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b, #e94560);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.2rem !important;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 32px !important;
+  line-height: 1.8 !important;
+  text-align: center !important;
+}
+
+.darkMode .heroSubtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .heroSubtitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.scrollDownButton {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+}
+
+.darkMode .scrollDownButton {
+  color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .scrollDownButton {
+  color: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.darkMode .scrollDownButton:hover {
+  background: rgba(233, 69, 96, 0.2) !important;
+  color: white !important;
+}
+
+.lightMode .scrollDownButton:hover {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Tracker Section - Centered */
+.trackerSection {
+  padding: 60px 0 80px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.trackerWrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 0 16px;
+}
+
+/* Stats Container - Full Width with Flex */
+.statsContainer {
+  width: 100%;
+}
+
+.statsFlex {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.statsFlex .statCardWrapper {
+  flex: 1;
+  min-width: 200px;
+  max-width: 100%;
+}
+
+/* Stat Cards */
+.statCard {
+  padding: 24px !important;
+  border-radius: 20px !important;
+  text-align: center;
+  transition: all 0.3s ease !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 160px;
+}
+
+.darkMode .statCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .statCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+}
+
+.darkMode .statCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.lightMode .statCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06) !important;
+}
+
+.statIconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.statIcon {
+  font-size: 28px !important;
+}
+
+.darkMode .statLabel {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .statLabel {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.statLabel {
+  display: block;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.7rem !important;
+  margin-bottom: 4px;
+  text-align: center !important;
+}
+
+.darkMode .statValue {
+  color: #ffffff !important;
+}
+
+.lightMode .statValue {
+  color: #1a1a2e !important;
+}
+
+.statValue {
+  font-weight: 700 !important;
+  text-align: center !important;
+  font-size: 2.2rem !important;
+}
+
+.darkMode .statSub {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.lightMode .statSub {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.statSub {
+  display: block;
+  margin-top: 4px;
+  text-align: center !important;
+}
+
+.progressBar {
+  margin-top: 8px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.progressLinear {
+  height: 6px !important;
+  border-radius: 3px !important;
+}
+
+.darkMode .progressLinear {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .progressLinear {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Controls Container */
+.controlsContainer {
+  width: 100%;
+}
+
+/* Controls Paper */
+.controlsPaper {
+  padding: 24px !important;
+  border-radius: 20px !important;
+  width: 100%;
+}
+
+.darkMode .controlsPaper {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .controlsPaper {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.controlsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.controlsLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.darkMode .controlsTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .controlsTitle {
+  color: #1a1a2e !important;
+}
+
+.controlsTitle {
+  font-weight: 700 !important;
+}
+
+.entriesChip {
+  font-weight: 500 !important;
+}
+
+.darkMode .entriesChip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .entriesChip {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.controlsRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filterControl {
+  min-width: 140px;
+}
+
+.darkMode .filterSelect .MuiOutlinedInput-root {
+  color: #ffffff !important;
+}
+
+.lightMode .filterSelect .MuiOutlinedInput-root {
+  color: #1a1a2e !important;
+}
+
+.darkMode .filterSelect .MuiOutlinedInput-root fieldset {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .filterSelect .MuiOutlinedInput-root fieldset {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.addButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 8px 20px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.addButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Chart Placeholder */
+.chartPlaceholder {
+  padding: 40px;
+  text-align: center;
+  border-radius: 16px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.darkMode .chartPlaceholder {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lightMode .chartPlaceholder {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chartContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.chartIcon {
+  font-size: 48px !important;
+  margin-bottom: 12px;
+}
+
+.darkMode .chartIcon {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.lightMode .chartIcon {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.darkMode .chartText {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.lightMode .chartText {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.chartText {
+  font-weight: 500 !important;
+  text-align: center !important;
+}
+
+.darkMode .chartSubtext {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.lightMode .chartSubtext {
+  color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.chartSubtext {
+  text-align: center !important;
+}
+
+/* Table Container */
+.tableContainer {
+  width: 100%;
+}
+
+/* Table Paper */
+.tablePaper {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  width: 100%;
+}
+
+.darkMode .tablePaper {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .tablePaper {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.tableHeader {
+  background: transparent !important;
+}
+
+.darkMode .tableCell {
+  color: rgba(255, 255, 255, 0.6) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .tableCell {
+  color: rgba(0, 0, 0, 0.4) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.tableCell {
+  font-weight: 600 !important;
+  padding: 16px !important;
+  text-align: center !important;
+}
+
+.tableCell:first-child {
+  text-align: center !important;
+}
+
+.tableRow {
+  transition: all 0.3s ease !important;
+}
+
+.tableRow:hover {
+  background: rgba(233, 69, 96, 0.02) !important;
+}
+
+.darkMode .tableRow .tableCell {
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.lightMode .tableRow .tableCell {
+  color: rgba(0, 0, 0, 0.7) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.dateCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dateIcon {
+  font-size: 16px !important;
+}
+
+.darkMode .dateIcon {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.lightMode .dateIcon {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.weightCell {
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.darkMode .weightCell {
+  color: #ffffff !important;
+}
+
+.lightMode .weightCell {
+  color: #1a1a2e !important;
+}
+
+.changeChip {
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+  margin: 0 auto;
+  display: inline-flex;
+}
+
+.lossChip {
+  background: rgba(78, 205, 196, 0.15) !important;
+  color: #4ecdc4 !important;
+}
+
+.gainChip {
+  background: rgba(233, 69, 96, 0.15) !important;
+  color: #e94560 !important;
+}
+
+.stableChip {
+  background: rgba(255, 230, 109, 0.15) !important;
+  color: #ffe66d !important;
+}
+
+.noteText {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center !important;
+  margin: 0 auto;
+}
+
+.darkMode .noteText {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .noteText {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.actionIcon {
+  transition: all 0.3s ease !important;
+  padding: 6px !important;
+  border-radius: 8px !important;
+}
+
+.darkMode .actionIcon {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.lightMode .actionIcon {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.darkMode .actionIcon:hover {
+  color: #e94560 !important;
+  background: rgba(233, 69, 96, 0.1) !important;
+  transform: scale(1.1);
+}
+
+.lightMode .actionIcon:hover {
+  color: #e94560 !important;
+  background: rgba(233, 69, 96, 0.08) !important;
+  transform: scale(1.1);
+}
+
+/* Empty State */
+.emptyCell {
+  padding: 60px 20px !important;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+}
+
+.emptyIcon {
+  font-size: 64px !important;
+}
+
+.darkMode .emptyIcon {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.lightMode .emptyIcon {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.darkMode .emptyTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .emptyTitle {
+  color: #1a1a2e !important;
+}
+
+.emptyTitle {
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+.darkMode .emptySubtitle {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .emptySubtitle {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.emptySubtitle {
+  text-align: center !important;
+}
+
+.emptyButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 8px 24px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+  margin-top: 8px;
+}
+
+.emptyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Tips Section */
+.tipsSection {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.darkMode .sectionChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.lightMode .sectionChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.sectionChip {
+  font-weight: 600 !important;
+}
+
+.darkMode .sectionTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .sectionTitle {
+  color: #1a1a2e !important;
+}
+
+.sectionTitle {
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 16px !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.sectionHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tipsWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.tipsScrollContainer {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  justify-content: flex-start;
+}
+
+.tipsScrollContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tipsScrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.tipsScrollContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(233, 69, 96, 0.3);
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(233, 69, 96, 0.5);
+}
+
+.tipsScrollContainer {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.tipsWrapper:hover .tipsScrollContainer {
+  scrollbar-color: rgba(233, 69, 96, 0.3) transparent;
+}
+
+.darkMode .tipCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .tipCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.tipCard {
+  flex: 0 0 280px;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+  scroll-snap-align: start;
+}
+
+.tipCard:hover {
+  transform: translateY(-5px);
+}
+
+.darkMode .tipCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.lightMode .tipCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06) !important;
+}
+
+.tipCardContent {
+  padding: 24px !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tipIconContainer {
+  width: 56px;
+  height: 56px;
+  background: rgba(233, 69, 96, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.tipCard:hover .tipIconContainer {
+  transform: scale(1.1) rotate(-5deg);
+  background: rgba(233, 69, 96, 0.2);
+}
+
+.tipIcon {
+  font-size: 28px !important;
+  color: #e94560;
+}
+
+.darkMode .tipTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .tipTitle {
+  color: #1a1a2e !important;
+}
+
+.tipTitle {
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.darkMode .tipDescription {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .tipDescription {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.tipDescription {
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+/* Modals */
+.modal .MuiDialog-paper {
+  border-radius: 24px !important;
+  max-width: 500px !important;
+  overflow: hidden !important;
+  margin: 16px !important;
+}
+
+.modalPaper {
+  padding: 0 !important;
+}
+
+.darkMode .modalPaper {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .modalPaper {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+.modalTitle {
+  padding: 24px 24px 8px 24px !important;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modalIcon {
+  color: #e94560;
+  font-size: 28px !important;
+}
+
+.modalHeading {
+  flex: 1;
+  font-weight: 700 !important;
+}
+
+.darkMode .modalHeading {
+  color: #ffffff !important;
+}
+
+.lightMode .modalHeading {
+  color: #1a1a2e !important;
+}
+
+.modalClose {
+  transition: all 0.3s ease !important;
+}
+
+.darkMode .modalClose {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .modalClose {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.modalClose:hover {
+  transform: rotate(90deg);
+  color: #e94560 !important;
+}
+
+.modalContent {
+  padding: 16px 24px 8px 24px !important;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.formGroup {
+  width: 100%;
+}
+
+.darkMode .formLabel {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .formLabel {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.formLabel {
+  font-weight: 500 !important;
+  display: block;
+  margin-bottom: 8px !important;
+}
+
+.darkMode .modalInput .MuiOutlinedInput-root {
+  color: #ffffff !important;
+}
+
+.lightMode .modalInput .MuiOutlinedInput-root {
+  color: #1a1a2e !important;
+}
+
+.darkMode .modalInput .MuiOutlinedInput-root fieldset {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .modalInput .MuiOutlinedInput-root fieldset {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.darkMode .modalInput .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+}
+
+.lightMode .modalInput .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+}
+
+.modalInput .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #e94560 !important;
+}
+
+.inputIcon {
+  color: rgba(233, 69, 96, 0.6);
+}
+
+.modalActions {
+  padding: 16px 24px 24px 24px !important;
+  gap: 12px !important;
+}
+
+.modalCancel {
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 8px 24px !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.darkMode .modalCancel {
+  color: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.lightMode .modalCancel {
+  color: #1a1a2e !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+.darkMode .modalCancel:hover {
+  color: #ffffff !important;
+  background: rgba(233, 69, 96, 0.1) !important;
+  border-color: #e94560 !important;
+}
+
+.lightMode .modalCancel:hover {
+  color: #e94560 !important;
+  background: rgba(233, 69, 96, 0.05) !important;
+  border-color: #e94560 !important;
+}
+
+.modalSave {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 8px 24px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.modalSave:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Delete Modal */
+.deleteModal .MuiDialog-paper {
+  border-radius: 24px !important;
+  max-width: 420px !important;
+  overflow: hidden !important;
+  margin: 16px !important;
+}
+
+.deleteModalPaper {
+  padding: 0 !important;
+}
+
+.darkMode .deleteModalPaper {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .deleteModalPaper {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+.deleteModalTitle {
+  padding: 24px 24px 8px 24px !important;
+}
+
+.deleteModalHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.deleteModalIcon {
+  color: #e94560;
+  font-size: 32px !important;
+}
+
+.deleteModalHeading {
+  font-weight: 700 !important;
+}
+
+.darkMode .deleteModalHeading {
+  color: #ffffff !important;
+}
+
+.lightMode .deleteModalHeading {
+  color: #1a1a2e !important;
+}
+
+.deleteModalContent {
+  padding: 16px 24px 8px 24px !important;
+}
+
+.darkMode .deleteModalText {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .deleteModalText {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.deleteModalText {
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.deleteEntryPreview {
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center !important;
+}
+
+.darkMode .deleteEntryPreview {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lightMode .deleteEntryPreview {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.darkMode .deleteModalWarning {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.lightMode .deleteModalWarning {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.deleteModalWarning {
+  display: block;
+  text-align: center !important;
+}
+
+.deleteModalActions {
+  padding: 16px 24px 24px 24px !important;
+  gap: 12px !important;
+}
+
+.deleteModalCancel {
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 8px 24px !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.darkMode .deleteModalCancel {
+  color: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.lightMode .deleteModalCancel {
+  color: #1a1a2e !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+.darkMode .deleteModalCancel:hover {
+  color: #ffffff !important;
+  background: rgba(233, 69, 96, 0.1) !important;
+  border-color: #e94560 !important;
+}
+
+.lightMode .deleteModalCancel:hover {
+  color: #e94560 !important;
+  background: rgba(233, 69, 96, 0.05) !important;
+  border-color: #e94560 !important;
+}
+
+.deleteModalConfirm {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 8px 24px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.deleteModalConfirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Scroll Top Button */
+.scrollTopButton {
+  position: fixed !important;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 1000;
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.scrollTopButton:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 12px 40px rgba(233, 69, 96, 0.4) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 250px;
+  }
+  
+  .statValue {
+    font-size: 1.8rem !important;
+  }
+  
+  .statsFlex .statCardWrapper {
+    min-width: 170px;
+  }
+}
+
+@media (max-width: 960px) {
+  .controlsHeader {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .controlsLeft {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .controlsRight {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .filterControl {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .addButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .statsFlex {
+    gap: 12px;
+  }
+  
+  .statsFlex .statCardWrapper {
+    min-width: 150px;
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 80px 0 40px;
+    min-height: auto;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem !important;
+    padding: 0 16px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem !important;
+  }
+  
+  .trackerSection {
+    padding: 40px 0 60px;
+  }
+  
+  .trackerWrapper {
+    padding: 0 12px;
+    gap: 16px;
+  }
+  
+  .statCard {
+    padding: 16px !important;
+    min-height: 130px;
+  }
+  
+  .statValue {
+    font-size: 1.5rem !important;
+  }
+  
+  .controlsPaper {
+    padding: 16px !important;
+  }
+  
+  .tableCell {
+    padding: 12px 8px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .weightCell {
+    font-size: 1rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 240px;
+  }
+  
+  .tipsScrollContainer {
+    gap: 16px;
+    padding: 10px 16px;
+  }
+  
+  .tipsSection {
+    padding: 60px 0;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+  
+  .dateCell {
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  .actionButtons {
+    flex-direction: row;
+    gap: 4px;
+    justify-content: center;
+  }
+  
+  .tableCell:first-child {
+    text-align: center !important;
+  }
+  
+  .modal .MuiDialog-paper {
+    margin: 16px !important;
+    max-width: 100% !important;
+  }
+  
+  .deleteModal .MuiDialog-paper {
+    margin: 16px !important;
+    max-width: 100% !important;
+  }
+  
+  .statCard {
+    padding: 12px !important;
+  }
+  
+  .noteText {
+    max-width: 80px;
+  }
+  
+  .statsFlex .statCardWrapper {
+    min-width: 130px;
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 600px) {
+  .statsFlex .statCardWrapper {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  
+  .statsFlex {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem !important;
+    padding: 0 16px;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem !important;
+  }
+  
+  .statValue {
+    font-size: 1.3rem !important;
+  }
+  
+  .statIconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .statIcon {
+    font-size: 20px !important;
+  }
+  
+  .scrollTopButton {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .tipCard {
+    flex: 0 0 220px;
+  }
+  
+  .tipCardContent {
+    padding: 16px !important;
+  }
+  
+  .tipTitle {
+    font-size: 1rem !important;
+  }
+  
+  .tipDescription {
+    font-size: 0.85rem !important;
+  }
+  
+  .chartPlaceholder {
+    padding: 20px;
+  }
+  
+  .modalContent {
+    padding: 12px 16px 8px 16px !important;
+  }
+  
+  .modalTitle {
+    padding: 16px 16px 8px 16px !important;
+  }
+  
+  .modalActions {
+    padding: 12px 16px 16px 16px !important;
+  }
+  
+  .deleteModalContent {
+    padding: 12px 16px 8px 16px !important;
+  }
+  
+  .deleteModalTitle {
+    padding: 16px 16px 8px 16px !important;
+  }
+  
+  .deleteModalActions {
+    padding: 12px 16px 16px 16px !important;
+  }
+  
+  .tableCell {
+    padding: 6px 4px !important;
+    font-size: 0.65rem !important;
+  }
+  
+  .weightCell {
+    font-size: 0.8rem !important;
+  }
+  
+  .changeChip {
+    font-size: 0.55rem !important;
+    padding: 2px 6px !important;
+  }
+  
+  .noteText {
+    max-width: 50px;
+    font-size: 0.65rem !important;
+  }
+  
+  .controlsLeft {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .controlsTitle {
+    font-size: 0.9rem !important;
+  }
+  
+  .filterControl {
+    max-width: 100%;
+  }
+  
+  .addButton {
+    max-width: 100%;
+    font-size: 0.8rem !important;
+    padding: 6px 16px !important;
+  }
+  
+  .statCard {
+    padding: 10px !important;
+    min-height: 110px;
+  }
+  
+  .statLabel {
+    font-size: 0.6rem !important;
+  }
+  
+  .dateCell {
+    flex-direction: row;
+    gap: 4px;
+  }
+  
+  .dateIcon {
+    font-size: 14px !important;
+  }
+  
+  .actionIcon {
+    padding: 4px !important;
+  }
+  
+  .actionIcon svg {
+    font-size: 16px !important;
+  }
+  
+  .entriesChip {
+    font-size: 0.6rem !important;
+  }
+  
+  .progressBar {
+    max-width: 120px;
+  }
+  
+  .actionButtons {
+    gap: 2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .heroTitle {
+    font-size: 1.6rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.4rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 200px;
+  }
+  
+  .statValue {
+    font-size: 1.1rem !important;
+  }
+  
+  .statCard {
+    padding: 8px !important;
+    min-height: 90px;
+  }
+  
+  .noteText {
+    max-width: 35px;
+    font-size: 0.6rem !important;
+  }
+  
+  .tableCell {
+    padding: 4px 2px !important;
+    font-size: 0.6rem !important;
+  }
+  
+  .weightCell {
+    font-size: 0.75rem !important;
+  }
+  
+  .changeChip {
+    font-size: 0.5rem !important;
+    padding: 1px 4px !important;
+  }
+  
+  .dateCell {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .dateIcon {
+    font-size: 12px !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
