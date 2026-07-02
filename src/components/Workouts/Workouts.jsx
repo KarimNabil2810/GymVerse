@@ -147,7 +147,7 @@ const Workouts = () => {
       difficulty: 'Advanced',
       duration: '50 min',
       calories: '500-600',
-      image: 'https://images.unsplash.com/photo-1571066811602-716837d681de?w=400',
+      image: 'https://wpassets.trainingpeaks.com/wp-content/uploads/2022/04/11111942/Cycling-Aero-Over-Power-20031.jpg?w=400',
       exercises: 6,
       description: 'Intense cycling workout for leg strength and endurance.',
       popular: false,
