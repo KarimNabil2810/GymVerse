@@ -1,0 +1,1458 @@
+/* Container - Dynamic Theme */
+.caloriesContainer {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.darkMode {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.lightMode {
+  background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f2 100%);
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  padding: 100px 0 60px;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.darkMode .heroSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.08), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.lightMode .heroSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.05), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroTextContainer {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chipWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.heroChip {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 6px 16px !important;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.heroTitle {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.02em !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.darkMode .heroTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .heroTitle {
+  color: #1a1a2e !important;
+}
+
+.heroHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b, #e94560);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.2rem !important;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 32px !important;
+  line-height: 1.8 !important;
+  text-align: center !important;
+}
+
+.darkMode .heroSubtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .heroSubtitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.scrollDownButton {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+}
+
+.darkMode .scrollDownButton {
+  color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .scrollDownButton {
+  color: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.darkMode .scrollDownButton:hover {
+  background: rgba(233, 69, 96, 0.2) !important;
+  color: white !important;
+}
+
+.lightMode .scrollDownButton:hover {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Calculator Section - Centered Wrapper */
+.calculatorSection {
+  padding: 60px 0 80px;
+}
+
+.calculatorWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Calculator Form */
+.calculatorForm {
+  padding: 32px !important;
+  border-radius: 24px !important;
+  transition: all 0.3s ease !important;
+  height: 100%;
+}
+
+.darkMode .calculatorForm {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .calculatorForm {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.formTitle {
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+.darkMode .formTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .formTitle {
+  color: #1a1a2e !important;
+}
+
+.formDivider {
+  margin-bottom: 24px !important;
+}
+
+.darkMode .formDivider {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.lightMode .formDivider {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.darkMode .formLabel {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .formLabel {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.formLabel {
+  font-weight: 500 !important;
+  display: block;
+  margin-bottom: 8px !important;
+}
+
+.genderButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.genderButton {
+  flex: 1;
+  border-radius: 12px !important;
+  padding: 10px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+}
+
+.darkMode .genderButton {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .genderButton {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.genderActive {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+
+.darkMode .formInput .MuiOutlinedInput-root {
+  color: #ffffff !important;
+}
+
+.lightMode .formInput .MuiOutlinedInput-root {
+  color: #1a1a2e !important;
+}
+
+.darkMode .formInput .MuiOutlinedInput-root fieldset {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .formInput .MuiOutlinedInput-root fieldset {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.darkMode .formInput .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+}
+
+.lightMode .formInput .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+}
+
+.formInput .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #e94560 !important;
+}
+
+.inputIcon {
+  color: rgba(233, 69, 96, 0.6);
+}
+
+.darkMode .formControl .MuiSelect-root {
+  color: #ffffff !important;
+}
+
+.lightMode .formControl .MuiSelect-root {
+  color: #1a1a2e !important;
+}
+
+.darkMode .formControl .MuiOutlinedInput-root fieldset {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .formControl .MuiOutlinedInput-root fieldset {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.selectDescription {
+  display: block;
+}
+
+.darkMode .selectDescription {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.lightMode .selectDescription {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.goalButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.goalButton {
+  flex: 1;
+  min-width: 100px;
+  border-radius: 12px !important;
+  padding: 10px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+}
+
+.darkMode .goalButton {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .goalButton {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.goalActive {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+
+.actionButtons {
+  margin-top: 8px;
+}
+
+.calculateButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.calculateButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+.darkMode .resetButton {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .resetButton {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.resetButton {
+  border-radius: 12px !important;
+  padding: 12px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.resetButton:hover {
+  border-color: #e94560 !important;
+  color: #e94560 !important;
+}
+
+/* Results Container */
+.resultsContainer {
+  padding: 32px !important;
+  border-radius: 24px !important;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease !important;
+  height: 100%;
+}
+
+.darkMode .resultsContainer {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .resultsContainer {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Results Placeholder */
+.resultsPlaceholder {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.placeholderIcon {
+  font-size: 80px !important;
+  margin-bottom: 24px;
+}
+
+.darkMode .placeholderIcon {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.lightMode .placeholderIcon {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.darkMode .placeholderTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .placeholderTitle {
+  color: #1a1a2e !important;
+}
+
+.placeholderTitle {
+  margin-bottom: 12px !important;
+}
+
+.darkMode .placeholderSubtitle {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .placeholderSubtitle {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.placeholderSubtitle {
+  max-width: 400px;
+  margin: 0 auto !important;
+}
+
+/* Results Content */
+.resultsContent {
+  width: 100%;
+}
+
+.resultsHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resultsChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.darkMode .resultsTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .resultsTitle {
+  color: #1a1a2e !important;
+}
+
+.resultsTitle {
+  font-weight: 700 !important;
+}
+
+/* Calorie Result */
+.calorieResult {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.calorieNumber {
+  margin-bottom: 12px;
+}
+
+.calorieValue {
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3.5rem !important;
+}
+
+.darkMode .calorieLabel {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .calorieLabel {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.calorieLabel {
+  display: block;
+  margin-top: 4px;
+}
+
+.goalResultChip {
+  font-weight: 600 !important;
+}
+
+.darkMode .goalResultChip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+}
+
+.lightMode .goalResultChip {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #1a1a2e !important;
+}
+
+.resultsDivider {
+  margin: 16px 0 !important;
+}
+
+.darkMode .resultsDivider {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.lightMode .resultsDivider {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Result Stats */
+.resultStat {
+  text-align: center;
+  padding: 6px;
+}
+
+.darkMode .resultStatLabel {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.lightMode .resultStatLabel {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.resultStatLabel {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.darkMode .resultStatValue {
+  color: #ffffff !important;
+}
+
+.lightMode .resultStatValue {
+  color: #1a1a2e !important;
+}
+
+.resultStatValue {
+  font-weight: 700 !important;
+}
+
+.darkMode .resultStatSub {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.lightMode .resultStatSub {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Macros Section */
+.macrosSection {
+  margin: 4px 0;
+}
+
+.darkMode .macrosTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .macrosTitle {
+  color: #1a1a2e !important;
+}
+
+.macrosTitle {
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+  text-align: center !important;
+}
+
+.macroItem {
+  text-align: center;
+  padding: 8px 4px;
+}
+
+.macroIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 6px;
+}
+
+.macroIcon svg {
+  font-size: 20px !important;
+}
+
+.darkMode .macroValue {
+  color: #ffffff !important;
+}
+
+.lightMode .macroValue {
+  color: #1a1a2e !important;
+}
+
+.macroValue {
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+}
+
+.darkMode .macroLabel {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .macroLabel {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.macroLabel {
+  display: block;
+}
+
+.darkMode .macroPercent {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.lightMode .macroPercent {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.macroPercent {
+  display: block;
+  font-size: 0.7rem !important;
+  margin-top: 2px;
+}
+
+.macroProgress {
+  height: 3px !important;
+  border-radius: 2px !important;
+  margin-top: 6px;
+}
+
+.darkMode .macroProgress {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .macroProgress {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Additional Stats */
+.additionalStats {
+  margin: 4px 0;
+}
+
+.additionalStat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.darkMode .additionalStat {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lightMode .additionalStat {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.additionalStatIcon {
+  color: #e94560;
+  font-size: 20px !important;
+}
+
+.darkMode .additionalStatLabel {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.lightMode .additionalStatLabel {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.additionalStatLabel {
+  display: block;
+  font-size: 0.65rem !important;
+}
+
+.darkMode .additionalStatValue {
+  color: #ffffff !important;
+}
+
+.lightMode .additionalStatValue {
+  color: #1a1a2e !important;
+}
+
+.additionalStatValue {
+  font-weight: 600 !important;
+}
+
+/* Diet Plan Button */
+.dietPlanButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 10px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  margin-top: 12px !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.dietPlanButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Error Modal */
+.errorModal .MuiDialog-paper {
+  border-radius: 24px !important;
+  max-width: 440px !important;
+  overflow: hidden !important;
+}
+
+.errorModalPaper {
+  padding: 0 !important;
+}
+
+.errorModalTitle {
+  padding: 24px 24px 8px 24px !important;
+}
+
+.errorModalHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.errorModalIcon {
+  color: #e94560;
+  font-size: 32px !important;
+}
+
+.errorModalHeading {
+  flex: 1;
+  font-weight: 700 !important;
+}
+
+.darkMode .errorModalHeading {
+  color: #ffffff !important;
+}
+
+.lightMode .errorModalHeading {
+  color: #1a1a2e !important;
+}
+
+.errorModalClose {
+  color: rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.errorModalClose:hover {
+  transform: rotate(90deg);
+  color: #e94560 !important;
+}
+
+.errorModalContent {
+  padding: 16px 24px 8px 24px !important;
+}
+
+.errorModalList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.errorModalItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  animation: slideIn 0.3s ease forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.errorModalItem:nth-child(1) { animation-delay: 0.05s; }
+.errorModalItem:nth-child(2) { animation-delay: 0.1s; }
+.errorModalItem:nth-child(3) { animation-delay: 0.15s; }
+.errorModalItem:nth-child(4) { animation-delay: 0.2s; }
+.errorModalItem:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.darkMode .errorModalItem {
+  background: rgba(233, 69, 96, 0.08);
+}
+
+.lightMode .errorModalItem {
+  background: rgba(233, 69, 96, 0.05);
+}
+
+.errorModalItemIcon {
+  color: #e94560;
+  font-size: 20px !important;
+  flex-shrink: 0;
+}
+
+.darkMode .errorModalItemText {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.lightMode .errorModalItemText {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.errorModalItemText {
+  font-weight: 500 !important;
+}
+
+.darkMode .errorModalSubtext {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.lightMode .errorModalSubtext {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.errorModalSubtext {
+  margin-top: 8px !important;
+}
+
+.errorModalActions {
+  padding: 16px 24px 24px 24px !important;
+}
+
+.errorModalButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.errorModalButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Tips Section */
+.tipsSection {
+  padding: 80px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.darkMode .sectionChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.lightMode .sectionChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.sectionChip {
+  font-weight: 600 !important;
+}
+
+.darkMode .sectionTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .sectionTitle {
+  color: #1a1a2e !important;
+}
+
+.sectionTitle {
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 16px !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.sectionHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tipsWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.tipsScrollContainer {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  justify-content: flex-start;
+}
+
+/* Hide scrollbar by default */
+.tipsScrollContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tipsScrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.tipsScrollContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+/* Show scrollbar on hover */
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(233, 69, 96, 0.3);
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(233, 69, 96, 0.5);
+}
+
+/* Firefox scrollbar hiding */
+.tipsScrollContainer {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.tipsWrapper:hover .tipsScrollContainer {
+  scrollbar-color: rgba(233, 69, 96, 0.3) transparent;
+}
+
+.darkMode .tipCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .tipCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.tipCard {
+  flex: 0 0 280px;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+  scroll-snap-align: start;
+}
+
+.tipCard:hover {
+  transform: translateY(-5px);
+}
+
+.darkMode .tipCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.lightMode .tipCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06) !important;
+}
+
+.tipCardContent {
+  padding: 24px !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tipIconContainer {
+  width: 56px;
+  height: 56px;
+  background: rgba(233, 69, 96, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.tipCard:hover .tipIconContainer {
+  transform: scale(1.1) rotate(-5deg);
+  background: rgba(233, 69, 96, 0.2);
+}
+
+.tipIcon {
+  font-size: 28px !important;
+  color: #e94560;
+}
+
+.darkMode .tipTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .tipTitle {
+  color: #1a1a2e !important;
+}
+
+.tipTitle {
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.darkMode .tipDescription {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .tipDescription {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.tipDescription {
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+/* Scroll Top Button */
+.scrollTopButton {
+  position: fixed !important;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 1000;
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.scrollTopButton:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 12px 40px rgba(233, 69, 96, 0.4) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 250px;
+  }
+  
+  .calorieValue {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .calculatorForm {
+    padding: 24px !important;
+  }
+  
+  .resultsContainer {
+    padding: 24px !important;
+    min-height: 300px;
+  }
+  
+  .calculatorWrapper {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 80px 0 40px;
+    min-height: auto;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem !important;
+    padding: 0 16px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem !important;
+  }
+  
+  .calculatorSection {
+    padding: 40px 0 60px;
+  }
+  
+  .calculatorWrapper {
+    padding: 0 12px;
+  }
+  
+  .calculatorForm {
+    padding: 20px !important;
+  }
+  
+  .resultsContainer {
+    padding: 20px !important;
+    min-height: 250px;
+  }
+  
+  .genderButtons {
+    flex-direction: row;
+  }
+  
+  .goalButtons {
+    flex-direction: row;
+  }
+  
+  .goalButton {
+    min-width: 80px;
+  }
+  
+  .calorieValue {
+    font-size: 2.5rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 240px;
+  }
+  
+  .tipsScrollContainer {
+    gap: 16px;
+    padding: 10px 16px;
+  }
+  
+  .tipsSection {
+    padding: 60px 0;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+  
+  .errorModal .MuiDialog-paper {
+    margin: 16px !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem !important;
+    padding: 0 16px;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem !important;
+  }
+  
+  .calculatorWrapper {
+    padding: 0 8px;
+  }
+  
+  .calculatorForm {
+    padding: 16px !important;
+  }
+  
+  .resultsContainer {
+    padding: 16px !important;
+    min-height: 200px;
+  }
+  
+  .genderButtons {
+    flex-direction: column;
+  }
+  
+  .goalButtons {
+    flex-direction: column;
+  }
+  
+  .goalButton {
+    min-width: unset;
+  }
+  
+  .calorieValue {
+    font-size: 2rem !important;
+  }
+  
+  .scrollTopButton {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .actionButtons {
+    flex-direction: column !important;
+  }
+  
+  .calculateButton,
+  .resetButton {
+    width: 100% !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 220px;
+  }
+  
+  .tipCardContent {
+    padding: 16px !important;
+  }
+  
+  .tipTitle {
+    font-size: 1rem !important;
+  }
+  
+  .tipDescription {
+    font-size: 0.85rem !important;
+  }
+  
+  .resultsHeader {
+    margin-bottom: 12px;
+  }
+  
+  .resultStatValue {
+    font-size: 1rem !important;
+  }
+  
+  .macroItem {
+    padding: 6px 2px;
+  }
+  
+  .macroValue {
+    font-size: 0.95rem !important;
+  }
+  
+  .additionalStat {
+    padding: 8px;
+  }
+  
+  .calorieResult {
+    padding: 10px 0;
+  }
+  
+  .resultsDivider {
+    margin: 10px 0 !important;
+  }
+  
+  .errorModalItem {
+    padding: 10px 12px !important;
+  }
+  
+  .errorModalItemText {
+    font-size: 0.85rem !important;
+  }
+  
+  .errorModalIcon {
+    font-size: 24px !important;
+  }
+  
+  .errorModalHeading {
+    font-size: 1rem !important;
+  }
+  
+  .additionalStatIcon {
+    font-size: 18px !important;
+  }
+  
+  .additionalStatValue {
+    font-size: 0.9rem !important;
+  }
+  
+  .macroIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .macroIcon svg {
+    font-size: 16px !important;
+  }
+  
+  .macroLabel {
+    font-size: 0.65rem !important;
+  }
+  
+  .dietPlanButton {
+    padding: 8px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .resultsChip {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .heroTitle {
+    font-size: 1.6rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.4rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 200px;
+  }
+  
+  .calorieValue {
+    font-size: 1.8rem !important;
+  }
+  
+  .calculatorForm {
+    padding: 12px !important;
+  }
+  
+  .resultsContainer {
+    padding: 12px !important;
+    min-height: 200px;
+  }
+  
+  .formGroup {
+    margin-bottom: 14px;
+  }
+  
+  .goalButton {
+    padding: 6px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .genderButton {
+    padding: 8px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
