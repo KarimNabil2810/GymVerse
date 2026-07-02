@@ -71,7 +71,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
   };
 
   const drawer = (
-    <Box className={styles.drawerContainer}>
+    <Box className={`${styles.drawerContainer} ${isDarkMode ? styles.drawerDark : styles.drawerLight}`}>
       <Box className={styles.drawerHeader}>
         <Box className={styles.drawerLogoContainer}>
           <FitnessCenterIcon className={styles.drawerLogoIcon} />
@@ -92,6 +92,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
             in={mobileOpen}
             style={{ transformOrigin: '0 0 0' }}
             timeout={(index + 1) * 100}
+            key={item.text}
           >
             <ListItem 
               button 
@@ -136,7 +137,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
     <>
       <AppBar 
         position="fixed" 
-        className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}
+        className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''} ${isDarkMode ? styles.navbarDark : styles.navbarLight}`}
         elevation={scrolled ? 4 : 0}
       >
         <Container maxWidth="xl">
@@ -148,7 +149,6 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               onClick={handleNavClick}
             >
               <Badge
-                badgeContent="β"
                 color="secondary"
                 className={styles.logoBadge}
                 anchorOrigin={{
@@ -158,7 +158,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               >
                 <FitnessCenterIcon className={styles.logoIcon} />
               </Badge>
-              <Typography variant="h6" className={styles.logoText}>
+              <Typography variant="h6" className={`${styles.logoText} ${isDarkMode ? styles.logoTextDark : styles.logoTextLight}`}>
                 Gym<span className={styles.logoHighlight}>Verse</span>
               </Typography>
             </Box>
@@ -176,14 +176,14 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                       component={Link}
                       to={item.path}
                       onClick={handleNavClick}
-                      className={`${styles.navButton} ${location.pathname === item.path ? styles.activeNavButton : ''}`}
+                      className={`${styles.navButton} ${location.pathname === item.path ? styles.activeNavButton : ''} ${isDarkMode ? styles.navButtonDark : styles.navButtonLight}`}
                       startIcon={item.icon}
                     >
                       {item.text}
                     </Button>
                   </Tooltip>
                 ))}
-                <Box className={styles.themeToggle} onClick={toggleTheme}>
+                <Box className={`${styles.themeToggle} ${isDarkMode ? styles.themeToggleDark : styles.themeToggleLight}`} onClick={toggleTheme}>
                   {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
                 </Box>
               </Box>
@@ -209,7 +209,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         classes={{
-          paper: styles.drawerPaper,
+          paper: `${styles.drawerPaper} ${isDarkMode ? styles.drawerPaperDark : styles.drawerPaperLight}`,
         }}
         ModalProps={{
           keepMounted: true,

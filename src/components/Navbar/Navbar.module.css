@@ -1,19 +1,39 @@
 /* Navbar Base */
 .navbar {
-  background: rgba(26, 26, 46, 0.85) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   padding: 0 !important;
 }
 
-.navbarScrolled {
+/* Dark Mode Navbar */
+.navbarDark {
+  background: rgba(26, 26, 46, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbarDark.navbarScrolled {
   background: rgba(26, 26, 46, 0.95) !important;
   backdrop-filter: blur(25px) saturate(200%);
   -webkit-backdrop-filter: blur(25px) saturate(200%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
   border-bottom: 1px solid rgba(233, 69, 96, 0.1);
+}
+
+/* Light Mode Navbar */
+.navbarLight {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.navbarLight.navbarScrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 1px solid rgba(233, 69, 96, 0.15);
 }
 
 .navbarSpacer {
@@ -78,10 +98,17 @@
 .logoText {
   font-weight: 800 !important;
   font-size: 1.6rem !important;
-  color: #ffffff !important;
   letter-spacing: -0.5px;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.logoTextDark {
+  color: #ffffff !important;
+}
+
+.logoTextLight {
+  color: #1a1a2e !important;
 }
 
 .logoHighlight {
@@ -109,8 +136,43 @@
   align-items: center;
 }
 
-.navButton {
+/* Dark Mode Nav Buttons */
+.navButtonDark {
   color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.navButtonDark:hover {
+  color: #ffffff !important;
+  background: rgba(233, 69, 96, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.15);
+}
+
+.navButtonDark.activeNavButton {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(255, 107, 107, 0.1)) !important;
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.1);
+}
+
+/* Light Mode Nav Buttons */
+.navButtonLight {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.navButtonLight:hover {
+  color: #1a1a2e !important;
+  background: rgba(233, 69, 96, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.08);
+}
+
+.navButtonLight.activeNavButton {
+  color: #e94560 !important;
+  background: rgba(233, 69, 96, 0.1) !important;
+  border: 1px solid rgba(233, 69, 96, 0.2);
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.05);
+}
+
+.navButton {
   font-weight: 500 !important;
   padding: 8px 18px !important;
   border-radius: 50px !important;
@@ -136,16 +198,13 @@
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navButton:hover {
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  background: rgba(233, 69, 96, 0.1) !important;
-  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.15);
-}
-
 .navButton:hover::before {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.navButton:hover {
+  transform: translateY(-2px);
 }
 
 .navButton .MuiButton-startIcon {
@@ -157,14 +216,20 @@
   transform: scale(1.1) rotate(-5deg);
 }
 
-.activeNavButton {
-  color: #ffffff !important;
-  background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(255, 107, 107, 0.1)) !important;
-  border: 1px solid rgba(233, 69, 96, 0.3);
-  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.1);
+.navButtonLight.activeNavButton::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, #e94560, #ff6b6b);
+  border-radius: 3px;
+  animation: slideIn 0.3s ease;
 }
 
-.activeNavButton::after {
+.navButtonDark.activeNavButton::after {
   content: '';
   position: absolute;
   bottom: 4px;
@@ -198,13 +263,26 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: rgba(255, 255, 255, 0.7);
   margin: 0 4px;
 }
 
-.themeToggle:hover {
+.themeToggleDark {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.themeToggleDark:hover {
   background: rgba(233, 69, 96, 0.15);
   color: #ffffff;
+  transform: rotate(30deg);
+}
+
+.themeToggleLight {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.themeToggleLight:hover {
+  background: rgba(233, 69, 96, 0.1);
+  color: #e94560;
   transform: rotate(30deg);
 }
 
@@ -225,9 +303,16 @@
 
 /* Mobile Menu Button */
 .menuButton {
-  color: #ffffff !important;
   padding: 8px !important;
   transition: all 0.3s ease !important;
+}
+
+.navbarDark .menuButton {
+  color: #ffffff !important;
+}
+
+.navbarLight .menuButton {
+  color: #1a1a2e !important;
 }
 
 .menuButton:hover {
@@ -241,24 +326,24 @@
   gap: 4px;
 }
 
-.mobileThemeBtn {
-  color: rgba(255, 255, 255, 0.7) !important;
+/* Drawer Paper */
+.drawerPaper {
+  border: none !important;
   transition: all 0.3s ease !important;
 }
 
-.mobileThemeBtn:hover {
-  color: #ffffff !important;
-  transform: rotate(30deg);
-}
-
-/* Drawer */
-.drawerPaper {
-  width: 320px !important;
+.drawerPaperDark {
   background: rgba(22, 33, 62, 0.98) !important;
   backdrop-filter: blur(30px) saturate(200%);
   -webkit-backdrop-filter: blur(30px) saturate(200%);
-  border: none !important;
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.drawerPaperLight {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.08) !important;
 }
 
 .drawerContainer {
@@ -268,12 +353,19 @@
   padding: 0;
 }
 
+.drawerDark .drawerHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.drawerLight .drawerHeader {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
 .drawerHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 24px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .drawerLogoContainer {
@@ -290,7 +382,6 @@
 
 .drawerLogoText {
   font-weight: 700 !important;
-  color: #ffffff !important;
   font-size: 1.3rem !important;
   background: linear-gradient(135deg, #e94560, #ff6b6b);
   -webkit-background-clip: text;
@@ -299,13 +390,20 @@
 }
 
 .drawerCloseBtn {
-  color: rgba(255, 255, 255, 0.5) !important;
   transition: all 0.3s ease !important;
 }
 
+.drawerDark .drawerCloseBtn {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.drawerLight .drawerCloseBtn {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
 .drawerCloseBtn:hover {
-  color: #ffffff !important;
   transform: rotate(90deg);
+  color: #e94560 !important;
   background: rgba(233, 69, 96, 0.1) !important;
 }
 
@@ -346,15 +444,29 @@
   opacity: 1;
 }
 
-.drawerItem:hover {
+.drawerDark .drawerItem:hover {
   background: rgba(233, 69, 96, 0.08) !important;
+}
+
+.drawerLight .drawerItem:hover {
+  background: rgba(233, 69, 96, 0.05) !important;
+}
+
+.drawerItem:hover {
   transform: translateX(8px);
 }
 
 .drawerItemIcon {
-  color: rgba(255, 255, 255, 0.5) !important;
   min-width: 40px !important;
   transition: all 0.3s ease !important;
+}
+
+.drawerDark .drawerItemIcon {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.drawerLight .drawerItemIcon {
+  color: rgba(0, 0, 0, 0.4) !important;
 }
 
 .drawerItem:hover .drawerItemIcon {
@@ -363,25 +475,42 @@
 }
 
 .drawerItemText {
-  color: rgba(255, 255, 255, 0.7) !important;
   transition: all 0.3s ease !important;
 }
 
-.drawerItem:hover .drawerItemText {
-  color: #ffffff !important;
+.drawerDark .drawerItemText {
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
-.activeDrawerItem {
+.drawerLight .drawerItemText {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.drawerItem:hover .drawerItemText {
+  color: #e94560 !important;
+}
+
+.drawerDark .activeDrawerItem {
   background: linear-gradient(135deg, rgba(233, 69, 96, 0.15), rgba(255, 107, 107, 0.05)) !important;
   border: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+.drawerLight .activeDrawerItem {
+  background: rgba(233, 69, 96, 0.08) !important;
+  border: 1px solid rgba(233, 69, 96, 0.15);
 }
 
 .activeDrawerItem .drawerItemIcon {
   color: #e94560 !important;
 }
 
-.activeDrawerItem .drawerItemText {
+.drawerDark .activeDrawerItem .drawerItemText {
   color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.drawerLight .activeDrawerItem .drawerItemText {
+  color: #e94560 !important;
   font-weight: 600 !important;
 }
 
@@ -395,7 +524,14 @@
 
 .drawerFooter {
   padding: 20px 24px;
+}
+
+.drawerDark .drawerFooter {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.drawerLight .drawerFooter {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .drawerThemeToggle {
@@ -406,12 +542,19 @@
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.drawerDark .drawerThemeToggle {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.drawerLight .drawerThemeToggle {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .drawerThemeToggle:hover {
   background: rgba(233, 69, 96, 0.1);
-  color: #ffffff;
+  color: #e94560;
 }
 
 .drawerThemeToggle svg {
