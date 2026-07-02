@@ -1,0 +1,2010 @@
+/* Container - Dynamic Theme */
+.dietContainer {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.darkMode {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.lightMode {
+  background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f2 100%);
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  padding: 100px 0 60px;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.darkMode .heroSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.08), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.lightMode .heroSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.05), transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroTextContainer {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chipWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.heroChip {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 6px 16px !important;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.heroTitle {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.02em !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.darkMode .heroTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .heroTitle {
+  color: #1a1a2e !important;
+}
+
+.heroHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b, #e94560);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.2rem !important;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 32px !important;
+  line-height: 1.8 !important;
+  text-align: center !important;
+}
+
+.darkMode .heroSubtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .heroSubtitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.scrollDownButton {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+}
+
+.darkMode .scrollDownButton {
+  color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.lightMode .scrollDownButton {
+  color: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.darkMode .scrollDownButton:hover {
+  background: rgba(233, 69, 96, 0.2) !important;
+  color: white !important;
+}
+
+.lightMode .scrollDownButton:hover {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Diet Section */
+.dietSection {
+  padding: 60px 0 80px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dietWrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 0 16px;
+}
+
+/* Summary Cards */
+.summaryContainer {
+  width: 100%;
+}
+
+.summaryFlex {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.summaryCardWrapper {
+  flex: 1;
+  min-width: 180px;
+  max-width: 100%;
+}
+
+.summaryCard {
+  padding: 20px !important;
+  border-radius: 20px !important;
+  text-align: center;
+  transition: all 0.3s ease !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 140px;
+}
+
+.darkMode .summaryCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .summaryCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.summaryCard:hover {
+  transform: translateY(-5px);
+}
+
+.darkMode .summaryCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.lightMode .summaryCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06) !important;
+}
+
+.summaryIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+}
+
+.summaryIcon {
+  font-size: 24px !important;
+}
+
+.darkMode .summaryLabel {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .summaryLabel {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.summaryLabel {
+  display: block;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.65rem !important;
+  margin-bottom: 4px;
+  text-align: center !important;
+}
+
+.darkMode .summaryValue {
+  color: #ffffff !important;
+}
+
+.lightMode .summaryValue {
+  color: #1a1a2e !important;
+}
+
+.summaryValue {
+  font-weight: 700 !important;
+  text-align: center !important;
+  font-size: 1.8rem !important;
+}
+
+.darkMode .summarySub {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.lightMode .summarySub {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.summarySub {
+  display: block;
+  margin-top: 2px;
+  text-align: center !important;
+}
+
+/* Day Selector */
+.daySelector {
+  width: 100%;
+}
+
+.dayTabs {
+  min-height: 50px !important;
+}
+
+.dayTabs .MuiTabs-flexContainer {
+  gap: 4px;
+  justify-content: center;
+}
+
+.dayTab {
+  min-height: 40px !important;
+  padding: 6px 16px !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+}
+
+.darkMode .dayTab {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .dayTab {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.darkMode .dayTab:hover {
+  color: #ffffff !important;
+  background: rgba(233, 69, 96, 0.05) !important;
+}
+
+.lightMode .dayTab:hover {
+  color: #1a1a2e !important;
+  background: rgba(233, 69, 96, 0.05) !important;
+}
+
+.dayTab.Mui-selected {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+}
+
+.tabIndicator {
+  display: none !important;
+}
+
+/* Meal Filter */
+.mealFilter {
+  width: 100%;
+}
+
+.mealTabs {
+  min-height: 50px !important;
+}
+
+.mealTabs .MuiTabs-flexContainer {
+  gap: 8px;
+  justify-content: center;
+}
+
+.mealTab {
+  min-height: 40px !important;
+  padding: 6px 16px !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease !important;
+}
+
+.darkMode .mealTab {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .mealTab {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.darkMode .mealTab:hover {
+  color: #ffffff !important;
+  background: rgba(233, 69, 96, 0.05) !important;
+}
+
+.lightMode .mealTab:hover {
+  color: #1a1a2e !important;
+  background: rgba(233, 69, 96, 0.05) !important;
+}
+
+.mealTab.Mui-selected {
+  color: #e94560 !important;
+  background: rgba(233, 69, 96, 0.1) !important;
+}
+
+.mealTabLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mealTabLabel svg {
+  font-size: 18px !important;
+}
+
+.mealTabText {
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+.mealTabIndicator {
+  display: none !important;
+}
+
+/* Meals Container */
+.mealsContainer {
+  width: 100%;
+  padding-top: 8px;
+}
+
+/* Meal Card */
+.mealCard {
+  height: 100%;
+  border-radius: 20px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden;
+}
+
+.darkMode .mealCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .mealCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.mealCard:hover {
+  transform: translateY(-8px);
+}
+
+.darkMode .mealCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+.lightMode .mealCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08) !important;
+}
+
+.mealCardContent {
+  padding: 24px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mealHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mealTypeBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.mealTypeBadge svg {
+  font-size: 16px !important;
+}
+
+.mealTypeLabel {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.mealTimeChip {
+  font-weight: 500 !important;
+}
+
+.darkMode .mealTimeChip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .mealTimeChip {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.mealName {
+  font-weight: 700 !important;
+}
+
+.darkMode .mealName {
+  color: #ffffff !important;
+}
+
+.lightMode .mealName {
+  color: #1a1a2e !important;
+}
+
+.mealNutrition {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nutritionItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 70px;
+}
+
+.nutritionIcon {
+  font-size: 20px !important;
+}
+
+.nutritionLabel {
+  display: block;
+}
+
+.darkMode .nutritionLabel {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.lightMode .nutritionLabel {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.darkMode .nutritionValue {
+  color: #ffffff !important;
+}
+
+.lightMode .nutritionValue {
+  color: #1a1a2e !important;
+}
+
+.nutritionValue {
+  font-weight: 600 !important;
+}
+
+.nutritionDivider {
+  height: 30px !important;
+}
+
+.darkMode .nutritionDivider {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .nutritionDivider {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.mealDivider {
+  margin: 4px 0 !important;
+}
+
+.darkMode .mealDivider {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .mealDivider {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.mealDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mealSubtitle {
+  font-weight: 600 !important;
+}
+
+.darkMode .mealSubtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .mealSubtitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.ingredientsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ingredientChip {
+  font-size: 0.7rem !important;
+}
+
+.darkMode .ingredientChip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .ingredientChip {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.mealInstructions {
+  line-height: 1.6 !important;
+}
+
+.darkMode .mealInstructions {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .mealInstructions {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.mealButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 10px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+  margin-top: 4px;
+}
+
+.mealButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* No Meals */
+.noMeals {
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noMealsIcon {
+  font-size: 64px !important;
+  margin-bottom: 16px;
+}
+
+.darkMode .noMealsIcon {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.lightMode .noMealsIcon {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.darkMode .noMealsTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .noMealsTitle {
+  color: #1a1a2e !important;
+}
+
+.noMealsTitle {
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.darkMode .noMealsSubtitle {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .noMealsSubtitle {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Tips Section */
+.tipsSection {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.darkMode .sectionChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.lightMode .sectionChip {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
+}
+
+.sectionChip {
+  font-weight: 600 !important;
+}
+
+.darkMode .sectionTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .sectionTitle {
+  color: #1a1a2e !important;
+}
+
+.sectionTitle {
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 16px !important;
+  text-align: center !important;
+  width: 100%;
+}
+
+.sectionHighlight {
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tipsWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.tipsScrollContainer {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  justify-content: flex-start;
+}
+
+.tipsScrollContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tipsScrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.tipsScrollContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(233, 69, 96, 0.3);
+}
+
+.tipsWrapper:hover .tipsScrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(233, 69, 96, 0.5);
+}
+
+.tipsScrollContainer {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.tipsWrapper:hover .tipsScrollContainer {
+  scrollbar-color: rgba(233, 69, 96, 0.3) transparent;
+}
+
+.darkMode .tipCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .tipCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.tipCard {
+  flex: 0 0 280px;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+  scroll-snap-align: start;
+}
+
+.tipCard:hover {
+  transform: translateY(-5px);
+}
+
+.darkMode .tipCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.lightMode .tipCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06) !important;
+}
+
+.tipCardContent {
+  padding: 24px !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tipIconContainer {
+  width: 56px;
+  height: 56px;
+  background: rgba(233, 69, 96, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.tipCard:hover .tipIconContainer {
+  transform: scale(1.1) rotate(-5deg);
+  background: rgba(233, 69, 96, 0.2);
+}
+
+.tipIcon {
+  font-size: 28px !important;
+  color: #e94560;
+}
+
+.darkMode .tipTitle {
+  color: #ffffff !important;
+}
+
+.lightMode .tipTitle {
+  color: #1a1a2e !important;
+}
+
+.tipTitle {
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
+}
+
+.darkMode .tipDescription {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .tipDescription {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.tipDescription {
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+/* Scroll Top Button */
+.scrollTopButton {
+  position: fixed !important;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 1000;
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.scrollTopButton:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 12px 40px rgba(233, 69, 96, 0.4) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 250px;
+  }
+  
+  .summaryValue {
+    font-size: 1.5rem !important;
+  }
+  
+  .summaryCardWrapper {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 960px) {
+  .summaryFlex {
+    gap: 12px;
+  }
+  
+  .summaryCardWrapper {
+    min-width: 140px;
+    flex: 1 1 calc(50% - 12px);
+  }
+  
+  .mealNutrition {
+    gap: 4px;
+  }
+  
+  .nutritionItem {
+    min-width: 60px;
+  }
+  
+  .nutritionDivider {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 80px 0 40px;
+    min-height: auto;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem !important;
+    padding: 0 16px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem !important;
+  }
+  
+  .dietSection {
+    padding: 40px 0 60px;
+  }
+  
+  .dietWrapper {
+    padding: 0 12px;
+    gap: 16px;
+  }
+  
+  .summaryCard {
+    padding: 16px !important;
+    min-height: 110px;
+  }
+  
+  .summaryValue {
+    font-size: 1.3rem !important;
+  }
+  
+  .summaryIconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .summaryIcon {
+    font-size: 20px !important;
+  }
+  
+  .dayTab {
+    font-size: 0.75rem !important;
+    padding: 4px 12px !important;
+  }
+  
+  .mealTab {
+    padding: 4px 10px !important;
+  }
+  
+  .mealTabLabel svg {
+    font-size: 14px !important;
+  }
+  
+  .mealTabText {
+    font-size: 0.7rem !important;
+  }
+  
+  .mealCardContent {
+    padding: 16px !important;
+  }
+  
+  .mealName {
+    font-size: 1.1rem !important;
+  }
+  
+  .mealNutrition {
+    gap: 8px;
+  }
+  
+  .nutritionItem {
+    min-width: 55px;
+  }
+  
+  .nutritionIcon {
+    font-size: 16px !important;
+  }
+  
+  .nutritionValue {
+    font-size: 0.85rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 240px;
+  }
+  
+  .tipsScrollContainer {
+    gap: 16px;
+    padding: 10px 16px;
+  }
+  
+  .tipsSection {
+    padding: 60px 0;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+  
+  .summaryCardWrapper {
+    min-width: 120px;
+    flex: 1 1 calc(50% - 10px);
+  }
+  
+  .summaryFlex {
+    gap: 10px;
+  }
+  
+  .mealTypeBadge {
+    padding: 2px 10px;
+    font-size: 0.7rem !important;
+  }
+  
+  .mealTypeBadge svg {
+    font-size: 14px !important;
+  }
+  
+  .mealTypeLabel {
+    font-size: 0.7rem !important;
+  }
+  
+  .ingredientChip {
+    font-size: 0.6rem !important;
+  }
+  
+  .mealInstructions {
+    font-size: 0.85rem !important;
+  }
+  
+  .mealButton {
+    padding: 8px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .mealHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .dayTabs .MuiTabs-flexContainer {
+    gap: 2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .summaryCardWrapper {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  
+  .summaryFlex {
+    gap: 8px;
+  }
+  
+  .summaryCard {
+    min-height: 90px;
+  }
+  
+  .summaryValue {
+    font-size: 1.1rem !important;
+  }
+  
+  .mealNutrition {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .nutritionItem {
+    min-width: 100%;
+    justify-content: center;
+  }
+  
+  .nutritionDivider {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem !important;
+    padding: 0 16px;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem !important;
+  }
+  
+  .scrollTopButton {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .tipCard {
+    flex: 0 0 220px;
+  }
+  
+  .tipCardContent {
+    padding: 16px !important;
+  }
+  
+  .tipTitle {
+    font-size: 1rem !important;
+  }
+  
+  .tipDescription {
+    font-size: 0.85rem !important;
+  }
+  
+  .dayTab {
+    font-size: 0.65rem !important;
+    padding: 4px 8px !important;
+    min-height: 32px !important;
+  }
+  
+  .mealTab {
+    padding: 4px 8px !important;
+    min-height: 32px !important;
+  }
+  
+  .mealTabLabel svg {
+    font-size: 12px !important;
+  }
+  
+  .mealTabText {
+    font-size: 0.6rem !important;
+  }
+  
+  .mealCardContent {
+    padding: 12px !important;
+  }
+  
+  .mealName {
+    font-size: 1rem !important;
+  }
+  
+  .mealHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .mealTypeBadge {
+    padding: 2px 8px;
+  }
+  
+  .mealTypeBadge svg {
+    font-size: 12px !important;
+  }
+  
+  .mealTypeLabel {
+    font-size: 0.6rem !important;
+  }
+  
+  .mealTimeChip {
+    font-size: 0.6rem !important;
+    height: 24px !important;
+  }
+  
+  .nutritionItem {
+    min-width: 100%;
+    justify-content: center;
+  }
+  
+  .nutritionIcon {
+    font-size: 14px !important;
+  }
+  
+  .nutritionLabel {
+    font-size: 0.55rem !important;
+  }
+  
+  .nutritionValue {
+    font-size: 0.75rem !important;
+  }
+  
+  .ingredientsList {
+    gap: 3px;
+  }
+  
+  .ingredientChip {
+    font-size: 0.55rem !important;
+    height: 20px !important;
+  }
+  
+  .mealInstructions {
+    font-size: 0.75rem !important;
+  }
+  
+  .mealButton {
+    padding: 6px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .noMeals {
+    padding: 40px 16px;
+  }
+  
+  .noMealsIcon {
+    font-size: 48px !important;
+  }
+  
+  .noMealsTitle {
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .heroTitle {
+    font-size: 1.6rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.4rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 200px;
+  }
+  
+  .dayTab {
+    font-size: 0.55rem !important;
+    padding: 2px 6px !important;
+    min-height: 28px !important;
+  }
+  
+  .mealTab {
+    padding: 2px 6px !important;
+    min-height: 28px !important;
+  }
+  
+  .mealTabText {
+    font-size: 0.5rem !important;
+  }
+  
+  .mealTabLabel svg {
+    font-size: 10px !important;
+  }
+  
+  .summaryValue {
+    font-size: 1rem !important;
+  }
+  
+  .summaryCard {
+    min-height: 80px;
+    padding: 10px !important;
+  }
+  
+  .summaryIconWrapper {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .summaryIcon {
+    font-size: 16px !important;
+  }
+  
+  .summaryLabel {
+    font-size: 0.55rem !important;
+  }
+  
+  .mealTypeBadge {
+    padding: 1px 6px;
+  }
+  
+  .mealTypeBadge svg {
+    font-size: 10px !important;
+  }
+  
+  .mealTypeLabel {
+    font-size: 0.5rem !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Day Selector - Centered */
+.daySelector {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dayTabs {
+  min-height: 50px !important;
+  width: 100%;
+  max-width: 700px;
+}
+
+.dayTabs .MuiTabs-flexContainer {
+  gap: 4px;
+  justify-content: center;
+}
+
+.dayTab {
+  min-height: 40px !important;
+  padding: 6px 20px !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+  min-width: 80px !important;
+}
+
+/* Meal Filter - Centered */
+.mealFilter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mealTabs {
+  min-height: 50px !important;
+  width: 100%;
+  max-width: 600px;
+}
+
+.mealTabs .MuiTabs-flexContainer {
+  gap: 8px;
+  justify-content: center;
+}
+
+.mealTab {
+  min-height: 40px !important;
+  padding: 6px 16px !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease !important;
+  min-width: 80px !important;
+}
+
+/* Meals Container - Scrollable in one line */
+.mealsContainer {
+  width: 100%;
+  padding-top: 8px;
+}
+
+.mealsWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.mealsScrollContainer {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  justify-content: flex-start;
+}
+
+/* Hide scrollbar by default */
+.mealsScrollContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.mealsScrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.mealsScrollContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+/* Show scrollbar on hover */
+.mealsWrapper:hover .mealsScrollContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mealsWrapper:hover .mealsScrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(233, 69, 96, 0.3);
+}
+
+.mealsWrapper:hover .mealsScrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(233, 69, 96, 0.5);
+}
+
+/* Firefox scrollbar hiding */
+.mealsScrollContainer {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.mealsWrapper:hover .mealsScrollContainer {
+  scrollbar-color: rgba(233, 69, 96, 0.3) transparent;
+}
+
+/* Meal Card - Scrollable with Same Height */
+.mealCard {
+  flex: 0 0 340px;
+  border-radius: 20px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden;
+  scroll-snap-align: start;
+  min-width: 320px;
+  max-width: 380px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  max-height: 480px;
+}
+
+.darkMode .mealCard {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .mealCard {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.mealCard:hover {
+  transform: translateY(-8px);
+}
+
+.darkMode .mealCard:hover {
+  border-color: rgba(233, 69, 96, 0.3) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+.lightMode .mealCard:hover {
+  border-color: rgba(233, 69, 96, 0.2) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08) !important;
+}
+
+.mealCardContent {
+  padding: 24px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.mealHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mealTypeBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.mealTypeBadge svg {
+  font-size: 16px !important;
+}
+
+.mealTypeLabel {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.mealTimeChip {
+  font-weight: 500 !important;
+  flex-shrink: 0;
+}
+
+.darkMode .mealTimeChip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .mealTimeChip {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.mealName {
+  font-weight: 700 !important;
+  flex-shrink: 0;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.darkMode .mealName {
+  color: #ffffff !important;
+}
+
+.lightMode .mealName {
+  color: #1a1a2e !important;
+}
+
+.mealNutrition {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 60px;
+}
+
+.nutritionItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 60px;
+  justify-content: center;
+}
+
+.nutritionIcon {
+  font-size: 20px !important;
+}
+
+.nutritionLabel {
+  display: block;
+}
+
+.darkMode .nutritionLabel {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.lightMode .nutritionLabel {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.darkMode .nutritionValue {
+  color: #ffffff !important;
+}
+
+.lightMode .nutritionValue {
+  color: #1a1a2e !important;
+}
+
+.nutritionValue {
+  font-weight: 600 !important;
+}
+
+.nutritionDivider {
+  height: 30px !important;
+}
+
+.darkMode .nutritionDivider {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .nutritionDivider {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.mealDivider {
+  margin: 2px 0 !important;
+  flex-shrink: 0;
+}
+
+.darkMode .mealDivider {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .mealDivider {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.mealDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-height: 60px;
+}
+
+.mealSubtitle {
+  font-weight: 600 !important;
+  flex-shrink: 0;
+}
+
+.darkMode .mealSubtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.lightMode .mealSubtitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.ingredientsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex-shrink: 0;
+  min-height: 28px;
+}
+
+.ingredientChip {
+  font-size: 0.7rem !important;
+  height: 24px !important;
+}
+
+.darkMode .ingredientChip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lightMode .ingredientChip {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.mealInstructions {
+  line-height: 1.5 !important;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 40px;
+}
+
+.darkMode .mealInstructions {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.lightMode .mealInstructions {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.mealButton {
+  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 10px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
+  transition: all 0.3s ease !important;
+  margin-top: 4px;
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+.mealButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mealCard {
+    flex: 0 0 320px;
+    min-width: 300px;
+    max-width: 360px;
+    min-height: 460px;
+    max-height: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mealCard {
+    flex: 0 0 300px;
+    min-width: 280px;
+    max-width: 340px;
+    min-height: 440px;
+    max-height: 440px;
+  }
+  
+  .mealCardContent {
+    padding: 20px !important;
+    gap: 8px;
+  }
+  
+  .mealNutrition {
+    padding: 8px 0;
+    min-height: 50px;
+  }
+  
+  .mealName {
+    font-size: 1.1rem !important;
+    min-height: 28px;
+  }
+  
+  .mealInstructions {
+    min-height: 35px;
+    font-size: 0.85rem !important;
+  }
+  
+  .mealButton {
+    min-height: 40px;
+    padding: 8px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .ingredientsList {
+    min-height: 24px;
+  }
+  
+  .ingredientChip {
+    font-size: 0.65rem !important;
+    height: 22px !important;
+  }
+  
+  .mealDetails {
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mealCard {
+    flex: 0 0 260px;
+    min-width: 240px;
+    max-width: 300px;
+    min-height: 420px;
+    max-height: 420px;
+  }
+  
+  .mealCardContent {
+    padding: 16px !important;
+    gap: 6px;
+  }
+  
+  .mealName {
+    font-size: 1rem !important;
+    min-height: 24px;
+  }
+  
+  .mealNutrition {
+    padding: 6px 0;
+    min-height: 44px;
+    gap: 4px;
+  }
+  
+  .nutritionItem {
+    min-width: 50px;
+  }
+  
+  .nutritionIcon {
+    font-size: 16px !important;
+  }
+  
+  .nutritionValue {
+    font-size: 0.8rem !important;
+  }
+  
+  .nutritionLabel {
+    font-size: 0.55rem !important;
+  }
+  
+  .nutritionDivider {
+    height: 24px !important;
+  }
+  
+  .mealInstructions {
+    min-height: 30px;
+    font-size: 0.8rem !important;
+    -webkit-line-clamp: 2;
+  }
+  
+  .mealButton {
+    min-height: 36px;
+    padding: 6px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .mealHeader {
+    gap: 4px;
+  }
+  
+  .mealTypeBadge {
+    padding: 2px 10px;
+    font-size: 0.7rem !important;
+  }
+  
+  .mealTypeBadge svg {
+    font-size: 14px !important;
+  }
+  
+  .mealTypeLabel {
+    font-size: 0.65rem !important;
+  }
+  
+  .mealTimeChip {
+    font-size: 0.6rem !important;
+    height: 24px !important;
+  }
+  
+  .ingredientsList {
+    min-height: 20px;
+    gap: 3px;
+  }
+  
+  .ingredientChip {
+    font-size: 0.6rem !important;
+    height: 20px !important;
+  }
+  
+  .mealDetails {
+    min-height: 44px;
+  }
+  
+  .mealSubtitle {
+    font-size: 0.8rem !important;
+  }
+  
+  .mealDivider {
+    margin: 1px 0 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .mealCard {
+    flex: 0 0 230px;
+    min-width: 210px;
+    max-width: 270px;
+    min-height: 400px;
+    max-height: 400px;
+  }
+  
+  .mealCardContent {
+    padding: 12px !important;
+    gap: 4px;
+  }
+  
+  .mealName {
+    font-size: 0.9rem !important;
+    min-height: 20px;
+  }
+  
+  .mealNutrition {
+    padding: 4px 0;
+    min-height: 38px;
+  }
+  
+  .nutritionItem {
+    min-width: 40px;
+    gap: 4px;
+  }
+  
+  .nutritionIcon {
+    font-size: 14px !important;
+  }
+  
+  .nutritionValue {
+    font-size: 0.7rem !important;
+  }
+  
+  .mealInstructions {
+    min-height: 26px;
+    font-size: 0.7rem !important;
+    -webkit-line-clamp: 2;
+  }
+  
+  .mealButton {
+    min-height: 32px;
+    padding: 4px !important;
+    font-size: 0.7rem !important;
+  }
+  
+  .mealTypeBadge {
+    padding: 1px 8px;
+  }
+  
+  .mealTypeBadge svg {
+    font-size: 12px !important;
+  }
+  
+  .mealTypeLabel {
+    font-size: 0.55rem !important;
+  }
+  
+  .mealTimeChip {
+    font-size: 0.5rem !important;
+    height: 20px !important;
+  }
+  
+  .ingredientChip {
+    font-size: 0.5rem !important;
+    height: 18px !important;
+  }
+  
+  .mealDetails {
+    min-height: 38px;
+  }
+  
+  .mealSubtitle {
+    font-size: 0.7rem !important;
+  }
+}
