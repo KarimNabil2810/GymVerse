@@ -1,16 +1,59 @@
-# React + Vite
+# GymVerse - Fitness & Wellness Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive fitness web application built with React and Material-UI for tracking your fitness journey.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 🔐 Navigation & Theme
+- Responsive navbar with collapsible drawer menu on mobile
+- **Light/Dark Mode** toggle with persistent theme
+- Active page indicators and smooth transitions
 
-## React Compiler
+### 🏠 Home Page
+- Hero section with animated gradient text
+- Feature cards with color-coded icons
+- Statistics with animated progress bars
+- User testimonials with avatars and ratings
+- Floating scroll-to-top button
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💪 Workout Library
+- Browse workouts with category tabs and search
+- Favorite and bookmark workouts
+- Difficulty badges (Beginner/Intermediate/Advanced)
+- Equipment lists and workout stats (duration, calories, exercises)
+- Featured workout of the week
 
-## Expanding the ESLint configuration
+### 🔢 Calories Calculator
+- **BMR & TDEE** calculation using Mifflin-St Jeor Equation
+- **Macronutrient breakdown** (Protein, Carbs, Fats) with percentages
+- Activity level selection (5 levels)
+- Goal setting: Lose, Maintain, or Gain weight
+- Water intake and sleep recommendations
+- Validation modal with error handling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ⚖️ Weight Tracker
+- Track weight entries with date and notes
+- Progress stats: current, goal, total lost
+- Edit and delete entries
+- Filter entries by time period (week, month, quarter)
+- Visual change indicators (loss/gain/stable)
+
+### 🥗 Diet Planner
+- 7-day meal plan with breakfast, lunch, dinner, and snacks
+- Nutritional information per meal (calories, protein, carbs, fats)
+- Ingredients and preparation instructions
+- Daily macro summary (total calories, protein, carbs, fats)
+- Filter meals by category
+
+## 🛠️ Tech Stack
+- **React** + **Vite** for fast development
+- **Material-UI** for components
+- **CSS Modules** for scoped styling
+- **React Router** for navigation
+
+## 📱 Responsive Design
+- Fully responsive across all devices (desktop, tablet, mobile)
+- Scrollable sections on mobile with hidden scrollbars until hover
+- Touch-friendly interactions
+
+<img width="1349" height="631" alt="Screenshot 2026-07-02 135925" src="https://github.com/user-attachments/assets/68761d3e-d041-4e1f-ac1d-0035e76e6df4" />
