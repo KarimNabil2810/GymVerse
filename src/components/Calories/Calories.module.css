@@ -771,24 +771,6 @@
   font-weight: 600 !important;
 }
 
-/* Diet Plan Button */
-.dietPlanButton {
-  background: linear-gradient(135deg, #e94560, #ff6b6b) !important;
-  color: white !important;
-  border-radius: 12px !important;
-  padding: 10px !important;
-  font-weight: 600 !important;
-  text-transform: none !important;
-  margin-top: 12px !important;
-  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2) !important;
-  transition: all 0.3s ease !important;
-}
-
-.dietPlanButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3) !important;
-}
-
 /* Error Modal */
 .errorModal .MuiDialog-paper {
   border-radius: 24px !important;
@@ -1397,13 +1379,485 @@
     font-size: 0.65rem !important;
   }
   
-  .dietPlanButton {
+  .resultsChip {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .heroTitle {
+    font-size: 1.6rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.4rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 200px;
+  }
+  
+  .calorieValue {
+    font-size: 1.8rem !important;
+  }
+  
+  .calculatorForm {
+    padding: 12px !important;
+  }
+  
+  .resultsContainer {
+    padding: 12px !important;
+    min-height: 200px;
+  }
+  
+  .formGroup {
+    margin-bottom: 14px;
+  }
+  
+  .goalButton {
+    padding: 6px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .genderButton {
     padding: 8px !important;
     font-size: 0.85rem !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* Update Calculator Section */
+.calculatorSection {
+  padding: 60px 0 80px;
+}
+
+.calculatorWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Calculator Flex Container */
+.calculatorFlex {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.formColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+.resultsColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Calculator Form */
+.calculatorForm {
+  padding: 32px !important;
+  border-radius: 24px !important;
+  transition: all 0.3s ease !important;
+  height: 100%;
+}
+
+.darkMode .calculatorForm {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .calculatorForm {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Results Container */
+.resultsContainer {
+  padding: 32px !important;
+  border-radius: 24px !important;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease !important;
+  height: 100%;
+}
+
+.darkMode .resultsContainer {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lightMode .resultsContainer {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Stats Flex */
+.statsFlex {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+.statsFlexItem {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Macros Flex */
+.macrosFlex {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+.macrosFlexItem {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Additional Stats Flex */
+.additionalStatsFlex {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+.additionalStatsFlexItem {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 250px;
+  }
+  
+  .calorieValue {
+    font-size: 3rem !important;
+  }
+  
+  .calculatorFlex {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 960px) {
+  .calculatorForm {
+    padding: 24px !important;
+  }
+  
+  .resultsContainer {
+    padding: 24px !important;
+    min-height: 300px;
+  }
+  
+  .calculatorWrapper {
+    padding: 0 16px;
+  }
+  
+  .calculatorFlex {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 80px 0 40px;
+    min-height: auto;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem !important;
+    padding: 0 16px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem !important;
+  }
+  
+  .calculatorSection {
+    padding: 40px 0 60px;
+  }
+  
+  .calculatorWrapper {
+    padding: 0 12px;
+  }
+  
+  .calculatorFlex {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .formColumn {
+    width: 100%;
+  }
+  
+  .resultsColumn {
+    width: 100%;
+  }
+  
+  .calculatorForm {
+    padding: 20px !important;
+  }
+  
+  .resultsContainer {
+    padding: 20px !important;
+    min-height: 250px;
+  }
+  
+  .genderButtons {
+    flex-direction: row;
+  }
+  
+  .goalButtons {
+    flex-direction: row;
+  }
+  
+  .goalButton {
+    min-width: 80px;
+  }
+  
+  .calorieValue {
+    font-size: 2.5rem !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 240px;
+  }
+  
+  .tipsScrollContainer {
+    gap: 16px;
+    padding: 10px 16px;
+  }
+  
+  .tipsSection {
+    padding: 60px 0;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+  
+  .errorModal .MuiDialog-paper {
+    margin: 16px !important;
+    max-width: 100% !important;
+  }
+  
+  .statsFlex {
+    gap: 12px;
+  }
+  
+  .macrosFlex {
+    gap: 12px;
+  }
+  
+  .additionalStatsFlex {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem !important;
+    padding: 0 16px;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem !important;
+  }
+  
+  .calculatorWrapper {
+    padding: 0 8px;
+  }
+  
+  .calculatorFlex {
+    gap: 12px;
+  }
+  
+  .calculatorForm {
+    padding: 16px !important;
+  }
+  
+  .resultsContainer {
+    padding: 16px !important;
+    min-height: 200px;
+  }
+  
+  .genderButtons {
+    flex-direction: column;
+  }
+  
+  .goalButtons {
+    flex-direction: column;
+  }
+  
+  .goalButton {
+    min-width: unset;
+  }
+  
+  .calorieValue {
+    font-size: 2rem !important;
+  }
+  
+  .scrollTopButton {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .actionButtons {
+    flex-direction: column !important;
+  }
+  
+  .calculateButton,
+  .resetButton {
+    width: 100% !important;
+  }
+  
+  .tipCard {
+    flex: 0 0 220px;
+  }
+  
+  .tipCardContent {
+    padding: 16px !important;
+  }
+  
+  .tipTitle {
+    font-size: 1rem !important;
+  }
+  
+  .tipDescription {
+    font-size: 0.85rem !important;
+  }
+  
+  .resultsHeader {
+    margin-bottom: 12px;
+  }
+  
+  .resultStatValue {
+    font-size: 1rem !important;
+  }
+  
+  .macroItem {
+    padding: 6px 2px;
+  }
+  
+  .macroValue {
+    font-size: 0.95rem !important;
+  }
+  
+  .additionalStat {
+    padding: 8px;
+  }
+  
+  .calorieResult {
+    padding: 10px 0;
+  }
+  
+  .resultsDivider {
+    margin: 10px 0 !important;
+  }
+  
+  .errorModalItem {
+    padding: 10px 12px !important;
+  }
+  
+  .errorModalItemText {
+    font-size: 0.85rem !important;
+  }
+  
+  .errorModalIcon {
+    font-size: 24px !important;
+  }
+  
+  .errorModalHeading {
+    font-size: 1rem !important;
+  }
+  
+  .additionalStatIcon {
+    font-size: 18px !important;
+  }
+  
+  .additionalStatValue {
+    font-size: 0.9rem !important;
+  }
+  
+  .macroIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .macroIcon svg {
+    font-size: 16px !important;
+  }
+  
+  .macroLabel {
+    font-size: 0.65rem !important;
   }
   
   .resultsChip {
     font-size: 0.7rem !important;
+  }
+  
+  .statsFlex {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .macrosFlex {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .additionalStatsFlex {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .statsFlexItem {
+    width: 100%;
+  }
+  
+  .macrosFlexItem {
+    width: 100%;
+  }
+  
+  .additionalStatsFlexItem {
+    width: 100%;
   }
 }
 

@@ -269,14 +269,14 @@ const Calories = () => {
         </IconButton>
       </Box>
 
-      {/* Calculator Section - Centered Container */}
+      {/* Calculator Section - Flex Container */}
       <Box id="calculator" className={styles.calculatorSection}>
         <Container maxWidth="lg">
           <Fade in timeout={800}>
             <Box className={styles.calculatorWrapper}>
-              <Grid container spacing={4} justifyContent="center">
+              <Box className={styles.calculatorFlex}>
                 {/* Form Column */}
-                <Grid item xs={12} md={6}>
+                <Box className={styles.formColumn}>
                   <Paper className={styles.calculatorForm}>
                     <Typography variant="h5" className={styles.formTitle} align="center">
                       Enter Your Details
@@ -457,10 +457,10 @@ const Calories = () => {
                       </Button>
                     </Stack>
                   </Paper>
-                </Grid>
+                </Box>
 
                 {/* Results Column */}
-                <Grid id="results-section" item xs={12} md={6}>
+                <Box id="results-section" className={styles.resultsColumn}>
                   <Paper className={styles.resultsContainer}>
                     {!calculated ? (
                       <Box className={styles.resultsPlaceholder}>
@@ -508,8 +508,8 @@ const Calories = () => {
                         <Divider className={styles.resultsDivider} />
 
                         {/* BMR & TDEE */}
-                        <Grid container spacing={2}>
-                          <Grid item xs={6}>
+                        <Box className={styles.statsFlex}>
+                          <Box className={styles.statsFlexItem}>
                             <Box className={styles.resultStat}>
                               <Typography variant="caption" className={styles.resultStatLabel} align="center">
                                 BMR
@@ -521,8 +521,8 @@ const Calories = () => {
                                 kcal/day
                               </Typography>
                             </Box>
-                          </Grid>
-                          <Grid item xs={6}>
+                          </Box>
+                          <Box className={styles.statsFlexItem}>
                             <Box className={styles.resultStat}>
                               <Typography variant="caption" className={styles.resultStatLabel} align="center">
                                 TDEE
@@ -534,8 +534,8 @@ const Calories = () => {
                                 kcal/day
                               </Typography>
                             </Box>
-                          </Grid>
-                        </Grid>
+                          </Box>
+                        </Box>
 
                         <Divider className={styles.resultsDivider} />
 
@@ -544,8 +544,8 @@ const Calories = () => {
                           <Typography variant="h6" className={styles.macrosTitle} align="center">
                             Macronutrients
                           </Typography>
-                          <Grid container spacing={2}>
-                            <Grid item xs={4}>
+                          <Box className={styles.macrosFlex}>
+                            <Box className={styles.macrosFlexItem}>
                               <Box className={styles.macroItem}>
                                 <Box className={styles.macroIcon} style={{ background: 'rgba(233, 69, 96, 0.1)' }}>
                                   <LocalFireDepartmentIcon style={{ color: '#e94560' }} />
@@ -570,8 +570,8 @@ const Calories = () => {
                                   }}
                                 />
                               </Box>
-                            </Grid>
-                            <Grid item xs={4}>
+                            </Box>
+                            <Box className={styles.macrosFlexItem}>
                               <Box className={styles.macroItem}>
                                 <Box className={styles.macroIcon} style={{ background: 'rgba(78, 205, 196, 0.1)' }}>
                                   <AppleIcon style={{ color: '#4ecdc4' }} />
@@ -596,8 +596,8 @@ const Calories = () => {
                                   }}
                                 />
                               </Box>
-                            </Grid>
-                            <Grid item xs={4}>
+                            </Box>
+                            <Box className={styles.macrosFlexItem}>
                               <Box className={styles.macroItem}>
                                 <Box className={styles.macroIcon} style={{ background: 'rgba(255, 230, 109, 0.1)' }}>
                                   <FastfoodIcon style={{ color: '#ffe66d' }} />
@@ -622,16 +622,16 @@ const Calories = () => {
                                   }}
                                 />
                               </Box>
-                            </Grid>
-                          </Grid>
+                            </Box>
+                          </Box>
                         </Box>
 
                         <Divider className={styles.resultsDivider} />
 
                         {/* Additional Stats */}
                         <Box className={styles.additionalStats}>
-                          <Grid container spacing={2}>
-                            <Grid item xs={6}>
+                          <Box className={styles.additionalStatsFlex}>
+                            <Box className={styles.additionalStatsFlexItem}>
                               <Box className={styles.additionalStat}>
                                 <WaterDropIcon className={styles.additionalStatIcon} />
                                 <Box>
@@ -643,8 +643,8 @@ const Calories = () => {
                                   </Typography>
                                 </Box>
                               </Box>
-                            </Grid>
-                            <Grid item xs={6}>
+                            </Box>
+                            <Box className={styles.additionalStatsFlexItem}>
                               <Box className={styles.additionalStat}>
                                 <BedtimeIcon className={styles.additionalStatIcon} />
                                 <Box>
@@ -656,23 +656,14 @@ const Calories = () => {
                                   </Typography>
                                 </Box>
                               </Box>
-                            </Grid>
-                          </Grid>
+                            </Box>
+                          </Box>
                         </Box>
-
-                        <Button
-                          variant="contained"
-                          fullWidth
-                          className={styles.dietPlanButton}
-                          endIcon={<RestaurantIcon />}
-                        >
-                          Get Your Diet Plan
-                        </Button>
                       </Box>
                     )}
                   </Paper>
-                </Grid>
-              </Grid>
+                </Box>
+              </Box>
             </Box>
           </Fade>
         </Container>
